@@ -1,0 +1,22 @@
+---
+# defaults file for common
+mokapot_debian_reqs:
+  - wapiti
+  - recon-ng
+  - hping3
+  - hashcat
+  - nikto
+  - nmap
+  - traceroute
+  - mtr
+  - tcpdump
+  - ssdeep
+mokapot_redhat_reqs:
+  - hping3
+  - hashcat
+  - nikto
+  - nmap
+  - traceroute
+  - mtr
+  - tcpdump
+  - ssdeep
