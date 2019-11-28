@@ -11,6 +11,15 @@ mokapot_debian_reqs:
   - mtr
   - tcpdump
   - ssdeep
+  - aircrack-ng
+  - kismet
+  - dirb
+  - hydra
+  - sec
+  - xxd # hexdump, dd
+  - gddrescue #ddrescue
+  - wireshark
+  - scapy
 mokapot_redhat_reqs:
   - hping3
   - hashcat
@@ -20,3 +29,22 @@ mokapot_redhat_reqs:
   - mtr
   - tcpdump
   - ssdeep
+  # - aircrack-ng
+  # - kismet
+  # - dirb
+  - hydra
+  - sec
+  # - xxd # hexdump, dd
+  # - gddrescue #ddrescue
+  - wireshark
+  - scapy
+wireshark_source_debian_reqs:   # build from source wireshark requirements
+  - cmake
+  - libglib2.0-dev
+  - libgcrypt20-dev
+  - flex
+  - bison
+  - gettext
+  - libssh-dev
+  - libpcap0.8-dev
+  - qtbase5-dev

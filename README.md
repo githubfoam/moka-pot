@@ -6,16 +6,20 @@ mokapot toolbox
 | Tool                  | Function            | Link      |
 | ---------------------| ---------------------|----------:|
 |  nipper              | Network Infrastructure Parser, Previously known as CiscoParser, network devices security auditing, Device security configuration review         | <https://github.com/arpitn30/nipper-ng>   |
+|  sec          | 	Simple Event Correlator   |  <https://simple-evcorr.github.io/>  |
 
 
 | Tool                  | Function            | Link      |
 | ---------------------| ---------------------|----------:|
 |  tcpdump              | packet analyzer        | <https://www.tcpdump.org/>   |
 |  hping3          | TCP/IP packet assembler/analyzer  |    |
+| wireshark          |  packet analyzer  |     |
+| scapy          |   packet manipulation tool, packet generator, network scanner, network discovery, packet sniffer  |     |
 
 | Tool                  | Function            | Link      |
 | ---------------------| ---------------------|----------:|
 | hashcat               | password recovery        | <https://github.com/hashcat/hashcat>   |
+| hydra               | parallelized login cracker        |    |
 
 | Tool                  | Function            | Link      |
 | ---------------------| ---------------------|----------:|
@@ -25,18 +29,26 @@ mokapot toolbox
 
 | Tool                  | Function            | Link      |
 | ---------------------| ---------------------|----------:|
-| nikto                 | Web Vulnerability Scanner   |    |
-| recon-ng              | Web Reconnaissance framework |    |
+| nikto                 | web Vulnerability Scanner   |    |
+| recon-ng              | web Reconnaissance framework |    |
 | wapiti              | web application vulnerability scanner |    |
+| dirb              | web Content Scanner |    |
 
 | Tool                  | Function            | Link      |
 | ---------------------| ---------------------|----------:|
 | ssdeep                 | fuzzy hashing   | <https://ssdeep-project.github.io/ssdeep/index.html>    |
 
+| Tool                  | Function            | Link      |
+| ---------------------| ---------------------|----------:|
+| aircrack-ng          |  Wireless Security Auditing   |     |
+| kismet               |  layer-2 wireless network detector, sniffer, and intrusion detection system.    |     |
 
-| Kali Linuz Tool      | <https://tools.kali.org/tools-listing> |
-| ---------------------|---------:|
-|  nipper              |  Reporting Tools        |
+
+| Tool                  | Function            | Link      |
+| ---------------------| ---------------------|----------:|
+|  hexdump                  | tool to make (or reverse) a hex dump  |  xxd package  |
+|  dd                  | utility can copy and convert simple files, device drivers |    |
+|  ddrescue                  | Data Recovery Tool |    |
 
 
 ~~~~
