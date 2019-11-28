@@ -13,6 +13,3 @@ common_default_redhat_reqs:
   - unzip
   - tar
   - socat
-  - traceroute
-  - mtr
-  - tcpdump
