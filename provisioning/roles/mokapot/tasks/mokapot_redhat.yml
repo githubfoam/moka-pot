@@ -1,5 +1,1 @@
 ---
-- name: "mokapot requirements"
-  package:
-    name: "{{ mokapot_redhat_reqs }}"
-    state: present

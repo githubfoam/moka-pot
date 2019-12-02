@@ -1,6 +1,28 @@
 ---
-# defaults file for common
 mokapot_debian_reqs:
+  - git
+  - wapiti
+  - recon-ng
+  - hping3
+  - hashcat
+  # - nikto
+  - nmap
+  - traceroute
+  - mtr
+  - tcpdump
+  - ssdeep
+  - aircrack-ng
+  - kismet
+  - dirb
+  - hydra
+  - sec
+  - xxd # hexdump, dd
+  - gddrescue #ddrescue
+  - wireshark
+  - scapy
+  - sleuthkit
+  - autopsy
+mokapot_ubuntu_reqs:
   - wapiti
   - recon-ng
   - hping3
@@ -20,10 +42,12 @@ mokapot_debian_reqs:
   - gddrescue #ddrescue
   - wireshark
   - scapy
+  - sleuthkit
+  - autopsy
 mokapot_redhat_reqs:
   - hping3
-  - hashcat
-  - nikto
+  # - hashcat
+  # - nikto
   - nmap
   - traceroute
   - mtr
@@ -32,7 +56,7 @@ mokapot_redhat_reqs:
   # - aircrack-ng
   # - kismet
   # - dirb
-  - hydra
+  # - hydra
   - sec
   # - xxd # hexdump, dd
   # - gddrescue #ddrescue

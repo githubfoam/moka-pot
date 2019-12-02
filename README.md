@@ -1,6 +1,5 @@
 # mokapot toolbox
 
-~~~~
 
 | Tool                  | Function            | Link      |
 | ---------------------| ---------------------|----------:|
@@ -12,8 +11,8 @@
 | --------------------- | ---------------------|----------:|
 |  tcpdump              | packet analyzer      | <https://www.tcpdump.org/>   |
 |  hping3               | TCP/IP packet assembler/analyzer  |    |
-| wireshark             |  packet analyzer     |     |
-| scapy                 |   packet manipulation tool, packet generator, network scanner, network discovery, packet sniffer  |     |
+| wireshark             | packet analyzer     |     |
+| scapy                 | packet manipulation tool, packet generator, network scanner, network discovery, packet sniffer  |     |
 
 | Tool                  | Function            | Link      |
 | --------------------- | ---------------------|----------:|
@@ -24,6 +23,8 @@
 | ---------------------| ---------------------|----------:|
 |  mtr                 | network diagnostic tool  |    |
 |  traceroute          | network diagnostic tool  |    |
+|  dig          | DNS lookup utility  |    |
+|  nc          | arbitrary TCP and UDP connections and listens  |    |
 |  nmap                | Security Scanner, Port Scanner, Network Exploration Too | <https://nmap.org/> |
 
 | Tool                  | Function             | Link      |
@@ -39,15 +40,14 @@
 
 | Tool                  | Function            | Link      |
 | ---------------------| ---------------------|----------:|
-| aircrack-ng          |  Wireless Security Auditing   |     |
-| kismet               |  layer-2 wireless network detector, sniffer, and intrusion detection system.    |     |
+| aircrack-ng          | Wireless Security Auditing   |     |
+| kismet               | layer-2 wireless network detector, sniffer, and intrusion detection system. |     |
 
 
 | Tool                  | Function            | Link      |
 | --------------------- | ---------------------|----------:|
-|  hexdump              | tool to make (or reverse) a hex dump  |  xxd package  |
+|  hexdump              | tool to make (or reverse) a hex dump  | xxd package  |
 |  dd                   | utility can copy and convert simple files, device drivers |    |
 |  ddrescue             | Data Recovery Tool |    |
-
-
-~~~~
+|  The Sleuth Kit       | a library and collection of command line tools that allow you to investigate disk images | <https://www.sleuthkit.org/sleuthkit/>  |
+|  Autopsy           | a graphical interface to the command line digital forensic analysis tools in The Sleuth Kit |  <https://www.sleuthkit.org/autopsy//>  |

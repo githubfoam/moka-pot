@@ -1,4 +1,5 @@
 ---
+# https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Ubuntu_Installation
 # [WARNING]: Could not find aptitude. Using apt-get instead fix
 - name: "APT: Install aptitude package"
   apt:
