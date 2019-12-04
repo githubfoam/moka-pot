@@ -51,3 +51,11 @@
 |  ddrescue             | Data Recovery Tool |    |
 |  The Sleuth Kit       | a library and collection of command line tools that allow you to investigate disk images | <https://www.sleuthkit.org/sleuthkit/>  |
 |  Autopsy           | a graphical interface to the command line digital forensic analysis tools in The Sleuth Kit |  <https://www.sleuthkit.org/autopsy//>  |
+
+~~~~
+mokapot cheatsheet
+https://gist.github.com/githubfoam/4d3c99383b5372ee019c8fbc7581637d
+
+OK - ubuntu-19.04
+OK - debian-10.1
+~~~~

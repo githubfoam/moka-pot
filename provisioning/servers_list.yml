@@ -35,5 +35,5 @@
   guest_port: 1235
   host_port: 1235
   server_bootstrap: "provisioning/deploy.yml"
-  ansible_version: "2.7.7" 
+  ansible_version: "2.7.7"
   ansible_compatibility_mode: "2.0"

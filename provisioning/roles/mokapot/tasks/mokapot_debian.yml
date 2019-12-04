@@ -1,13 +1,27 @@
 ---
+- name: "Add debian buster nonfree repos"
+  blockinfile:
+    path: /etc/apt/sources.list
+    backup: yes
+    block: |
+      deb [arch=amd64] http://ftp.gr.debian.org/debian/ buster main contrib non-free
+      deb-src [arch=amd64] http://ftp.gr.debian.org/debian/ buster main contrib non-free
+
+      deb [arch=amd64] http://ftp.gr.debian.org/debian/ buster-updates main contrib non-free
+      deb-src [arch=amd64] http://ftp.gr.debian.org/debian/ buster-updates main contrib non-free
+
+      deb [arch=amd64] http://security.debian.org/ buster/updates main contrib non-free
+      deb-src [arch=amd64] http://security.debian.org/ buster/updates main contrib non-free
 # [WARNING]: Could not find aptitude. Using apt-get instead fix
 - name: "APT: Install aptitude package"
   apt:
    name: aptitude
    force_apt_get: yes
-- name: "mokapot requirements"
-  package:
+- name: "Install mokapot requirements"
+  apt:
     name: "{{ mokapot_debian_reqs }}"
-    state: present
+    state: latest
+    update_cache: yes
 - name: "git checkout nipper"
   git:
     repo: 'https://github.com/arpitn30/nipper-ng.git'
