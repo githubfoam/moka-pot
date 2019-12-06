@@ -58,6 +58,6 @@
 mokapot cheatsheet
 https://gist.github.com/githubfoam/4d3c99383b5372ee019c8fbc7581637d
 
-OK - ubuntu-19.04
-OK - debian-10.1
+linuz distro watch
+provisioning\servers_list.yml
 ~~~~
