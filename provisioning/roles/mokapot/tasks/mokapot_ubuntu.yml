@@ -1,14 +1,24 @@
 ---
-# https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Ubuntu_Installation
 # [WARNING]: Could not find aptitude. Using apt-get instead fix
 - name: "APT: Install aptitude package"
   apt:
    name: aptitude
    force_apt_get: yes
-- name: "mokapot requirements"
-  package:
-    name: "{{ mokapot_debian_reqs }}"
-    state: present
+# distribution specific
+- name: "Install mokapot requirements"
+  apt:
+    name: "{{ ubuntu_1604_reqs }}"
+    state: latest
+    update_cache: yes
+  when: " ansible_os_family == 'Debian' and ansible_distribution in ['Ubuntu'] and ansible_distribution_version in ['16.04'] "
+- name: "Install mokapot requirements"
+  apt:
+    name: "{{ ubuntu_1904_reqs }}"
+    state: latest
+    update_cache: yes
+  when: " ansible_os_family == 'Debian' and ansible_distribution in ['Ubuntu'] and ansible_distribution_version in ['19.04'] "  
+
+# mutual packages
 - name: "git checkout nipper"
   git:
     repo: 'https://github.com/arpitn30/nipper-ng.git'

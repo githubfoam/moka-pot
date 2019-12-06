@@ -22,7 +22,33 @@ mokapot_debian_reqs:
   - scapy
   - sleuthkit
   - autopsy
-mokapot_ubuntu_reqs:
+  # - ntop
+  - netsniff-ng
+ubuntu_1604_reqs:
+  - wapiti
+  # - recon-ng
+  - hping3
+  # - hashcat
+  - nikto
+  - nmap
+  - traceroute
+  - mtr
+  - tcpdump
+  - ssdeep
+  - aircrack-ng
+  - kismet
+  # - dirb
+  - hydra
+  - sec
+  # - xxd # hexdump, dd
+  - gddrescue #ddrescue
+  - wireshark
+  - scapy
+  - sleuthkit
+  - autopsy
+  # - ntop
+  - netsniff-ng
+ubuntu_1904_reqs:
   - wapiti
   - recon-ng
   - hping3
@@ -44,24 +70,32 @@ mokapot_ubuntu_reqs:
   - scapy
   - sleuthkit
   - autopsy
+  # - ntop
+  - netsniff-ng
 mokapot_redhat_reqs:
+  - wapiti
+  - recon-ng
   - hping3
-  # - hashcat
-  # - nikto
+  - hashcat
+  - nikto
   - nmap
   - traceroute
   - mtr
   - tcpdump
   - ssdeep
-  # - aircrack-ng
-  # - kismet
-  # - dirb
-  # - hydra
+  - aircrack-ng
+  - kismet
+  - dirb
+  - hydra
   - sec
-  # - xxd # hexdump, dd
-  # - gddrescue #ddrescue
+  - xxd # hexdump, dd
+  - gddrescue #ddrescue
   - wireshark
   - scapy
+  - sleuthkit
+  - autopsy
+  # - ntop
+  - netsniff-ng
 wireshark_source_debian_reqs:   # build from source wireshark requirements
   - cmake
   - libglib2.0-dev

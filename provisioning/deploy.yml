@@ -11,4 +11,21 @@
     shell: "hostnamectl set-hostname {{ inventory_hostname }}"
   roles:
     - common
+- name: "Install mokapot"
+  gather_facts: true
+  hosts:  vg-mokapot-01
+  become: yes
+  roles:
+    - mokapot
+- name: "Install mokapot"
+  gather_facts: true
+  hosts:  vg-mokapot-02
+  become: yes
+  roles:
+    - mokapot
+- name: "Install mokapot"
+  gather_facts: true
+  hosts:  vg-mokapot-03
+  become: yes
+  roles:
     - mokapot

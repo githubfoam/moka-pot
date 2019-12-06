@@ -1,8 +1,12 @@
 ---
 - debug:
+    msg: "{{ hostvars[inventory_hostname].ansible_os_family }}"  
+- debug:
     msg: "{{ hostvars[inventory_hostname].ansible_distribution }}"
 - debug:
     msg: "{{ hostvars[inventory_hostname].ansible_distribution_major_version }}"
+- debug:
+    msg: "{{ hostvars[inventory_hostname].ansible_distribution_release }}"
 - debug:
     msg: "{{ hostvars[inventory_hostname].ansible_distribution_version }}"
 
@@ -12,8 +16,11 @@
 
 - name: "Add Ubuntu mokapot"
   include_tasks: mokapot_ubuntu.yml
-  # when: " ansible_os_family == 'Debian' and ansible_distribution in ['Debian','Ubuntu'] "
-  when: " ansible_os_family == 'Debian' and ansible_distribution in ['Ubuntu'] "
+  when: " ansible_os_family == 'Debian' and ansible_distribution in ['Ubuntu'] and ansible_distribution_version in ['16.04'] "
+
+- name: "Add Ubuntu mokapot"
+  include_tasks: mokapot_ubuntu.yml
+  when: " ansible_os_family == 'Debian' and ansible_distribution in ['Ubuntu'] and ansible_distribution_version in ['19.04'] "
 
 - name: "Add RedHat mokapot"
   include_tasks: mokapot_redhat.yml
