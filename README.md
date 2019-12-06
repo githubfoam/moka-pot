@@ -13,6 +13,8 @@
 |  hping3               | TCP/IP packet assembler/analyzer  |    |
 | wireshark             | packet analyzer     |     |
 | scapy                 | packet manipulation tool, packet generator, network scanner, network discovery, packet sniffer  |     |
+| netsniff-ng             | network development and analysis, debugging, auditing or network reconnaissance     | <http://netsniff-ng.org/>    |
+
 
 | Tool                  | Function            | Link      |
 | --------------------- | ---------------------|----------:|
