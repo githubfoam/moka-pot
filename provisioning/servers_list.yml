@@ -13,7 +13,7 @@
   ansible_compatibility_mode: "2.0"
 
 - vagrant_box_host: "vg-mokapot-02"
-  vagrant_box: "bento/centos-8.0"
+  vagrant_box: "bento/centos-7.7"
   vbox_name: "vbox-mokapot-02"
   vbox_ram: 512
   vbox_cpu: 2
@@ -22,7 +22,7 @@
   guest_port: 80
   host_port: 81
   server_bootstrap: "provisioning/deploy.yml"
-  ansible_version: "2.9.1"
+  ansible_version: "2.9.2"
   ansible_compatibility_mode: "2.0"
 
 - vagrant_box_host: "vg-mokapot-03"

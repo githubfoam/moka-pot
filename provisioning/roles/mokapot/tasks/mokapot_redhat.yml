@@ -3,3 +3,10 @@
   package:
     name: "{{ mokapot_redhat_reqs }}"
     state: present
+
+- name: "Extract safec for runtime bounds checks on certain legacy C-library calls,this is optional but recommended, into /tmp"
+  unarchive:
+    src: https://ghidra-sre.org/ghidra_{{ ghidra_version }}_PUBLIC_{{ ghidra_release_date }}.zip
+    dest: /tmp
+    creates: /tmp/libsafec-{{ safec_major_version }}.{{ safec_minor_version }}
+    remote_src: yes
