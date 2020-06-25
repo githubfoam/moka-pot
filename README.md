@@ -1,7 +1,8 @@
 # moka-pot
-mokapot toolbox
 
-update ubuntu1910 branch
+Travis (.com) dev branch:
+[![Build Status](https://travis-ci.com/githubfoam/moka-pot.svg?branch=ubuntu1904)](https://travis-ci.com/githubfoam/moka-pot)  
+
 ~~~~
 
 >vagrant up vg-mokapot-01
