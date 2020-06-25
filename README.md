@@ -1,8 +1,29 @@
 # moka-pot
 mokapot toolbox
 
-update ubuntu1904 branch
+update ubuntu1910 branch
 ~~~~
+
+>vagrant up vg-mokapot-01
+
+==> vg-mokapot-01: Running provisioner: ansible_local...
+    vg-mokapot-01: Installing Ansible...
+The requested Ansible version (2.9.1) was not found on the guest.
+Please check the Ansible installation on your Vagrant guest system (currently: 2.9.4),
+or adapt the provisioner `version` option in your Vagrantfile.
+See https://docs.vagrantup.com/v2/provisioning/ansible_common.html#version
+for more information.
+
+TASK [Gathering Facts] *********************************************************
+[DEPRECATION WARNING]: Distribution Ubuntu 19.04 on host vg-mokapot-01 should
+use /usr/bin/python3, but is using /usr/bin/python for backward compatibility
+with prior Ansible releases. A future Ansible release will default to using the
+ discovered platform python for this host. See https://docs.ansible.com/ansible
+/2.9/reference_appendices/interpreter_discovery.html for more information. This
+ feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+ok: [vg-mokapot-01]
+
 ~~~~
 
 ~~~~
@@ -42,5 +63,10 @@ update ubuntu1904 branch
 | ---------------------|---------:|
 |  nipper              |  Reporting Tools        |
 
+
+| Tool                  | Function            | Link      |
+| ---------------------| ---------------------|----------:|
+| blazescan                 | fuzzy hashing   |   |
+| maldet                    | fuzzy hashing   |   |
 
 ~~~~

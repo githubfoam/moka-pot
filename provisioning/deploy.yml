@@ -11,4 +11,12 @@
     shell: "hostnamectl set-hostname {{ inventory_hostname }}"
   roles:
     - common
-    - mokapot
+
+# - name: "Install docker-ce and docker-compose-ce"
+#   gather_facts: true
+#   hosts:  vg-foremansrv01
+#   become: yes
+#   vars:
+#     foreman_db_pass: supersecret
+#   roles:
+#     - foreman
