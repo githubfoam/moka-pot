@@ -39,7 +39,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           # echo "======================================================================================="
           # SHELL
 
-          box.vm.provision "ansible_local" do |ansible|
+          #box.vm.provision "ansible_local" do |ansible|
+          box.vm.provision :ansible do |ansible|
               # ansible.compatibility_mode = "2.0"
               ansible.compatibility_mode = server["ansible_compatibility_mode"]
               ansible.version = server["ansible_version"]
