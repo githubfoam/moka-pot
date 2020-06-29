@@ -14,6 +14,7 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # # vagrant up --provider=libvirt
 # vagrant up --provider=libvirt vg-mokapot-01
 
+# https://www.debian.org/releases/
 
 #https://github.com/chef/bento/tree/master/packer_templates/debian
 vagrant box add "bento/debian-9.12" --provider=virtualbox
@@ -31,10 +32,22 @@ vagrant up --provider=libvirt "vg-mokapot-05"
 # HOST is not windows.
 # HOST is travisci bionic server
 apt-get install nfs-common nfs-kernel-server -qqy
-# MUST BE ADDED
-#https://www.vagrantup.com/docs/synced-folders/nfs.html#root-privilege-requirement
 
-# https://www.debian.org/releases/
+#https://www.vagrantup.com/docs/synced-folders/nfs.html#root-privilege-requirement
+TMP=$(mktemp) #temporary file to contain the sudoers-changes
+cat > $TMP <<EOF
+Cmnd_Alias VAGRANT_EXPORTS_ADD = /bin/su root -c echo '*' >> /etc/exports
+Cmnd_Alias VAGRANT_NFSD = /etc/init.d/nfs-kernel-server restart
+Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -e /*/ d -ibak /etc/exports
+%admin ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD, VAGRANT_EXPORTS_REMOVE
+EOF
+cat $TMP
+visudo -c -f $TMP # Check if the changes are OK
+# $? is a variable holding the exit code of the last run command
+if [ $? -eq 0 ]; then
+    # This computes! Starting up visudo with this script as first parameter
+    export EDITOR=$0 && export FILE_OK=$TMP && sudo -E visudo -f /etc/sudoers.d/vagrant_sudoers
+fi
 
 #https://app.vagrantup.com/debian/boxes/buster64
 vagrant box add "debian/buster64" --provider=libvirt
