@@ -1,0 +1,32 @@
+---
+- name: Install prerequisites
+  apt: name=aptitude update_cache=yes state=latest force_apt_get=yes
+  tags: [ system ]
+
+- name: "Install LAMP Packages"
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: "{{ lamp_packages }}"
+  tags: [ system ]
+
+- name: Install PHP Extensions
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: "{{ php_modules }}"
+  tags: [ system ]
+
+- name: "Configure Apache"
+  include_tasks: "config_apache_debian.yml"
+
+- name: "Configure MySQL"
+  include_tasks: "config_mysql_debian.yml"
+
+- name: "Allow HTTP on port {{ http_port }}"
+  ufw:
+    rule: allow
+    port: "{{ http_port }}"
+    proto: tcp
+
+  # PHP Info Page
+- name: Sets Up PHP Info Page
+  template:
+    src: "info.php.j2"
+    dest: "/var/www/{{ http_host }}/info.php"
