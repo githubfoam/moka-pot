@@ -1,0 +1,2 @@
+---
+chromium_flags_disable_web_security: true

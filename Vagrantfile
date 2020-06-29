@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
               vb.memory = server["vbox_ram"]
               vb.cpus = server["vbox_cpu"]
               vb.gui = false
-              vb.customize ["modifyvm", :id, "--groups", "/zeek-sandbox"] # create vbox group
+              vb.customize ["modifyvm", :id, "--groups", "/mokapot-sandbox"] # create vbox group
           end # end of box.vm.providers
           box.vm.provision "shell", inline: <<-SHELL
           set -eux -o pipefail && apt-get update && apt-get install python3 python3-pip -y # ubuntu-19.04 ansible_python_interpreter: /usr/bin/python3
@@ -45,11 +45,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
               # ansible.inventory_path = 'provisioning/hosts'
               # ansible.verbose = "vvvv" # debug
            end # end if box.vm.provision
-          box.vm.provision "shell", inline: <<-SHELL
-          echo "======================================================================================="
-          hostnamectl status
-          echo "======================================================================================="
-          SHELL
+          # box.vm.provision "shell", inline: <<-SHELL
+          # echo "======================================================================================="
+          # hostnamectl status
+          # echo "======================================================================================="
+          # SHELL
 
         end # end of config.vm
       end  # end of servers_list.each loop

@@ -1,0 +1,5 @@
+---
+chromium_package:
+  ubuntu: chromium-browser
+  kali: chromium
+  debian: chromium
