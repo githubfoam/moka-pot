@@ -1,0 +1,23 @@
+---
+- name: "Install Chromium"
+  apt:
+    name: chromium
+    state: present
+
+- name: "Configure Chromium to run as root"
+  blockinfile:
+    path: /etc/chromium.d/default-flags
+    marker: "# {mark} ANSIBLE MANAGED BLOCK run-as-root"
+    state: present
+    block: |
+      # Allow to run as root
+      export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --password-store=detect --no-sandbox --user-data-dir"
+
+- name: "Configure Chromium to disable web security"
+  blockinfile:
+    path: /etc/chromium.d/default-flags
+    marker: "# {mark} ANSIBLE MANAGED BLOCK disable-web-security"
+    state: "{{ (chromium_flags_disable_web_security is defined and chromium_flags_disable_web_security) | ternary('present', 'absent') }}"
+    block: |
+      # Disable web security
+      export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --disable-web-security"
