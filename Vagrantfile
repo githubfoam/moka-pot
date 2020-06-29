@@ -46,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
               # ansible.version = server["ansible_version"] # automation purposes
               ansible.playbook = server["server_bootstrap"]
               # ansible.inventory_path = 'provisioning/hosts'
-              ansible.verbose = "vvvv" # debug
+              # ansible.verbose = "vvvv" # debug
            end # end if box.vm.provision
 
 
