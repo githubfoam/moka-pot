@@ -30,13 +30,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
               vb.gui = false
               vb.customize ["modifyvm", :id, "--groups", "/mokapot-sandbox"] # create vbox group
           end # end of box.vm.providers
-          box.vm.provision "shell", inline: <<-SHELL
-          set -eux -o pipefail && apt-get update && apt-get install python3 python3-pip -y # ubuntu-19.04 ansible_python_interpreter: /usr/bin/python3
-          echo "======================================================================================="
-          python3 -V
-          pip3 -V
-          echo "======================================================================================="
-          SHELL
+
+          box.vm.provision "shell", path: server["shell_provision"]
+          # box.vm.provision :shell, path: "provisioning/bootstrap.sh"
+          # box.vm.provision "shell", inline: <<-SHELL
+          # echo "======================================================================================="
+          # hostnamectl status
+          # echo "======================================================================================="
+          # SHELL
+
           box.vm.provision "ansible_local" do |ansible|
               # ansible.compatibility_mode = "2.0"
               ansible.compatibility_mode = server["ansible_compatibility_mode"]
@@ -45,11 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
               # ansible.inventory_path = 'provisioning/hosts'
               # ansible.verbose = "vvvv" # debug
            end # end if box.vm.provision
-          # box.vm.provision "shell", inline: <<-SHELL
-          # echo "======================================================================================="
-          # hostnamectl status
-          # echo "======================================================================================="
-          # SHELL
+
 
         end # end of config.vm
       end  # end of servers_list.each loop

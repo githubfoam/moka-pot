@@ -13,9 +13,9 @@
   # ansible_version: "2.9.7"
   ansible_compatibility_mode: "2.0"
 
-- vagrant_box_host: "vg-foremansrv02"
-  vagrant_box: "bento/centos-8.1"
-  vbox_name: "vbox-foremansrv02"
+- vagrant_box_host: "vg-mokapot-02"
+  vagrant_box: "debian/buster64"
+  vbox_name: "vbox-mokapot-02"
   vbox_ram: 4096
   vbox_cpu: 2
   network_type: "private_network"
@@ -27,9 +27,9 @@
   # ansible_version: "2.9.7"
   ansible_compatibility_mode: "2.0"
 
-- vagrant_box_host: "vg-foremansrv03"
-  vagrant_box: "bento/ubuntu-20.04"
-  vbox_name: "vbox-foremansrv03"
+- vagrant_box_host: "vg-mokapot-03"
+  vagrant_box: "debian/stretch64"
+  vbox_name: "vbox-mokapot-03"
   vbox_ram: 4096
   vbox_cpu: 2
   network_type: "private_network"

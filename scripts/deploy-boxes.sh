@@ -14,10 +14,18 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # # vagrant up --provider=libvirt
 # vagrant up --provider=libvirt vg-mokapot-01
 
+#https://app.vagrantup.com/debian/boxes/buster64
+vagrant box add "debian/buster64" --provider=libvirt
+vagrant up --provider=libvirt "vg-mokapot-02"
+
+#https://app.vagrantup.com/debian/boxes/stretch64
+vagrant box add "debian/stretch64" --provider=libvirt
+vagrant up --provider=libvirt "vg-mokapot-03"
+
+#https://github.com/chef/bento/tree/master/packer_templates/debian
 vagrant box add "bento/debian-9.12" --provider=virtualbox
 vagrant mutate "bento/debian-9.12" libvirt
-# vagrant up --provider=libvirt
-vagrant up --provider=libvirt "vg-foremansrv04"
+vagrant up --provider=libvirt "vg-mokapot-04"
 
 
 vagrant box list #veridy installed boxes
