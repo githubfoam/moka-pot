@@ -14,6 +14,13 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # # vagrant up --provider=libvirt
 # vagrant up --provider=libvirt vg-mokapot-01
 
+# adapter to enable NFS on this machine for Vagrant.
+# Please verify that `nfsd` is installed on your machine, and try again
+# HOST is not windows.
+# HOST is travisci bionic server
+# vagrant cloud debian box specific
+apt-get install nfs-common nfs-kernel-server -qqy
+
 #https://app.vagrantup.com/debian/boxes/buster64
 vagrant box add "debian/buster64" --provider=libvirt
 vagrant up --provider=libvirt "vg-mokapot-02"
@@ -27,6 +34,10 @@ vagrant box add "bento/debian-9.12" --provider=virtualbox
 vagrant mutate "bento/debian-9.12" libvirt
 vagrant up --provider=libvirt "vg-mokapot-04"
 
+#https://github.com/chef/bento/tree/master/packer_templates/debian
+vagrant box add "bento/debian-10.4" --provider=virtualbox
+vagrant mutate "bento/debian-10.4" libvirt
+vagrant up --provider=libvirt "vg-mokapot-05"
 
 vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
