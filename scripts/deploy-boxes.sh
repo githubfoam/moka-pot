@@ -9,13 +9,6 @@ echo "==========================================================================
 vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
 vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
 
-######vg-mokapot-05: /tmp/vagrant-shell: line 16: ansible: command not found ###
-#Ansible provides its official PPA for the installation on Debian systems
-deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-apt update -qq && apt-get install ansible --qqy
-ansible --version
-
 # https://www.debian.org/releases/
 
 #/opt/vagrant/embedded/gems/2.2.9/gems/vagrant-2.2.9/plugins/provisioners/ansible/cap/guest/posix/ansible_installed.rb:13:in `ansible_installed': undefined method `empty?' for nil:NilClass (NoMethodError)
