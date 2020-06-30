@@ -1,6 +1,6 @@
 ---
 - vagrant_box_host: "vg-mokapot-01"
-  vagrant_box: "bento/ubuntu-20.04"
+  vagrant_box: "bento/ubuntu-19.10"
   vbox_name: "vbox-mokapot-01"
   vbox_ram: 4096
   vbox_cpu: 2
@@ -14,7 +14,7 @@
   ansible_compatibility_mode: "2.0"
 
 - vagrant_box_host: "vg-mokapot-02"
-  vagrant_box: "debian/buster64"
+  vagrant_box: "archlinux/archlinux"
   vbox_name: "vbox-mokapot-02"
   vbox_ram: 4096
   vbox_cpu: 2

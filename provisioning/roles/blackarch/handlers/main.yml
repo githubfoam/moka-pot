@@ -1,0 +1,6 @@
+---
+# Run the equivalent of "$ pacman -Syu"
+- name: update pacman
+  pacman:
+    update_cache: yes
+    upgrade: yes

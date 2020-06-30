@@ -1,0 +1,9 @@
+---
+base_url: "https://www.blackarch.org"
+keyring_url: "{{ base_url }}/keyring"
+keyring_filename: "blackarch-keyring.pkg.tar.xz"
+keyserver: "hkp://pool.sks-keyservers.net"
+evan_pubkey: "4345771566D76038C7FEB43863EC0ADBEA87E4E3"
+mirrorlist_filename: "blackarch-mirrorlist"
+mirrorlist_path: "/etc/pacman.d/{{ mirrorlist_filename }}"
+mirrorlist_url: "{{ base_url }}/{{ mirrorlist_filename }}"
