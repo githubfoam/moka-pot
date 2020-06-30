@@ -40,7 +40,7 @@
     - hcxdumptool
     - wireguard
     - powershell
-    - impact
+    - impacket
     - nullinux
     - role: johntheripper
       jtr_local_src_dir: /usr/local/src
