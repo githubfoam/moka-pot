@@ -42,10 +42,10 @@
     #- powershell #Depends: libssl1.0.2 but it is not installable\n
     - impacket
     - nullinux
-    - role: johntheripper
-      jtr_local_src_dir: /usr/local/src
-      jtr_openmpi_support_enabled: true
-      jtr_rexgen_support_enabled: false
+    # - role: johntheripper # cannot remove '/usr/local/src/JohnTheRipper/run/*.dSYM': No such file or directory",
+    #   jtr_local_src_dir: /usr/local/src
+    #   jtr_openmpi_support_enabled: true
+    #   jtr_rexgen_support_enabled: false
 
 # - name: "Build Ubuntu 19.10 (Eon) mokapot"
 #   gather_facts: true
