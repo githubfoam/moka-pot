@@ -1,11 +1,12 @@
 ---
+#https://docs.ansible.com/ansible/2.3/include_vars_module.html
 - name: "Load a variable file based on the OS type, or a default if not found"
   include_vars: "{{ item }}"
   with_first_found:
     - "{{ ansible_os_family }}.yml"
     -  "{{ ansible_distribution }}_{{ ansible_distribution_version }}.yml"
-    - default.yaml
-  skip: true
+    - default.yml
+
 
 - name: "Install system packages"
   package:
