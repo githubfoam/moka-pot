@@ -35,7 +35,7 @@
     #   - ms-vscode.go
     - docker
     # - bettercap #"No package matching 'bettercap' is available"
-    - empire
+    # - empire #"No package matching 'libssl1.0.2' is available"
     - hcxtools
     - hcxdumptool
     - wireguard
