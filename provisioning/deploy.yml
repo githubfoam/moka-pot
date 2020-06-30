@@ -34,7 +34,7 @@
     #   - ms-python.python
     #   - ms-vscode.go
     - docker
-    - bettercap
+    # - bettercap #"No package matching 'bettercap' is available"
     - empire
     - hcxtools
     - hcxdumptool
