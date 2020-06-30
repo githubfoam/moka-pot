@@ -1,0 +1,4 @@
+---
+ghidra_dep_packages:
+  - openjdk-11-jdk
+  - unzip

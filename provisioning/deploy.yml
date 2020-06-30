@@ -12,14 +12,6 @@
   roles:
     - common
 
-- name: "Build Ubuntu 19.10 (Eon) mokapot"
-  gather_facts: true
-  hosts:  vg-mokapot-01
-  become: yes
-  roles:
-    #- chromium #"No package matching 'chromium' is available"
-    - burpsuite
-
 # - name: "Build blackarch mokapot"
 #   gather_facts: true
 #   hosts:  vg-mokapot-02
@@ -31,17 +23,23 @@
   gather_facts: true
   hosts:  vg-mokapot-05
   become: yes
-  vars:
-    foreman_db_pass: supersecret
   roles:
     - chromium
     - burpsuite
+    - ghidra
+    - docker
 
-- name: "Build Archlinux mokapot"
-  gather_facts: true
-  hosts:  vg-mokapot-06
-  become: yes
-  vars:
-    foreman_db_pass: supersecret
-  roles:
-    - tor
+# - name: "Build Ubuntu 19.10 (Eon) mokapot"
+#   gather_facts: true
+#   hosts:  vg-mokapot-01
+#   become: yes
+#   roles:
+#     #- chromium #"No package matching 'chromium' is available"
+#     - burpsuite
+#
+# - name: "Build Archlinux mokapot"
+#   gather_facts: true
+#   hosts:  vg-mokapot-06
+#   become: yes
+#   roles:
+#     - tor

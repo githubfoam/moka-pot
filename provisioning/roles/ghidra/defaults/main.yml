@@ -1,0 +1,6 @@
+---
+
+ghidra_archive_url: https://ghidra-sre.org/ghidra_9.1.2_PUBLIC_20200212.zip
+ghidra_archive_checksum: ebe3fa4e1afd7d97650990b27777bb78bd0427e8e70c1d0ee042aeb52decac61
+
+ghidra_dir: /opt/ghidra

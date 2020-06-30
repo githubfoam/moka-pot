@@ -1,0 +1,71 @@
+---
+# tasks file for ansible-role-ghidra
+
+- name: Install Ghidra dependencies
+  apt:
+    name: "{{ ghidra_dep_packages }}"
+    state: present
+
+- name: Ensure Ghidra directory exists
+  file:
+    path: "{{ ghidra_dir }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Check if previously installed
+  stat:
+    path: "{{ ghidra_dir }}/Ghidra/application.properties"
+  register: ghidra_properties_file
+
+- name: Read application.properties file
+  slurp:
+    src: "{{ ghidra_dir }}/Ghidra/application.properties"
+  register: ghidra_properties_contents
+  when: ghidra_properties_file.stat.exists
+
+- name: Get current version
+  set_fact:
+    installed_version: "{{ ghidra_properties_contents.content | b64decode |
+        regex_search('application.version=([0-9.]+(-\\w+)?)', multiline=True) |
+        regex_replace('application.version=([0-9.]+(-\\w+)?)', '\\1') }}"
+  when: ghidra_properties_file.stat.exists
+
+- name: Infer version from Ghidra archive file
+  set_fact:
+    ghidra_version: "{{ ghidra_archive_url |
+        regex_replace('.*ghidra_([0-9.]+(-\\w+)?)_\\w+_[0-9]{8}\\.zip', '\\1') }}"
+
+- block:
+  - name: Create temp directory
+    tempfile:
+      state: directory
+    register: temp_dir
+
+  - name: Download and unzip Ghidra
+    unarchive:
+      src: "{{ ghidra_archive_url }}"
+      dest: "{{ temp_dir.path }}"
+      remote_src: yes
+      owner: root
+      group: root
+
+  - name: Copy extracted files
+    shell: "cp -rf ghidra_*/* {{ ghidra_dir }}/"
+    args:
+      chdir: "{{ temp_dir.path }}"
+
+  - name: Remove temp directory
+    file:
+      path: "{{ temp_dir.path }}"
+      state: absent
+  when: installed_version is not defined or installed_version != ghidra_version
+
+- name: Create desktop file
+  template:
+    src: ghidra.desktop.j2
+    dest: /usr/share/applications/ghidra.desktop
+    owner: root
+    group: root
+    mode: 0644
