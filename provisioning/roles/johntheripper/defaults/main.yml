@@ -1,0 +1,8 @@
+---
+jtr_local_src_dir: /usr/local/src
+
+jtr_src_dir: '{{ jtr_local_src_dir }}/JohnTheRipper'
+jtr_rexgen_src_dir: '{{ jtr_local_src_dir }}/rexgen'
+
+jtr_openmpi_support_enabled: true
+jtr_rexgen_support_enabled: true

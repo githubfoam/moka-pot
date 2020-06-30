@@ -1,0 +1,25 @@
+---
+- name: Install Rexgen dependencies
+  apt:
+    name: '{{ jtr_rexgen_packages }}'
+
+- name: Clone Rexgen git repository
+  git:
+    repo: '{{ jtr_rexgen_repo_url }}'
+    dest: '{{ jtr_rexgen_src_dir }}'
+    version: master
+  register: clone_rexgen
+  changed_when: false
+
+- name: Install Rexgen
+  command: ./install.sh
+  args:
+    chdir: '{{ jtr_rexgen_src_dir }}'
+  register: rexgen_install
+  when: clone_rexgen is changed
+  changed_when: false
+
+- name: Execute ldconfig for Rexgen install
+  command: ldconfig
+  when: rexgen_install is succeeded
+  changed_when: false

@@ -1,0 +1,12 @@
+---
+- name: Ensure VS Code data directory exists
+  file:
+    path: "~/.vscode"
+    state: directory
+    mode: 0750
+
+- name: Install VS Code extensions
+  command: "code --user-data-dir ~/.vscode --install-extension {{ item }}"
+  loop: "{{ vscode_extensions | default([]) }}"
+  register: install_extension
+  changed_when: "'successfully installed' in install_extension.stdout"   

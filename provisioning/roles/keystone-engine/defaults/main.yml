@@ -1,0 +1,4 @@
+---
+keystone_repo_url: https://github.com/keystone-engine/keystone.git
+
+keystone_local_src_dir: /usr/local/src/keystone

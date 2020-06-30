@@ -1,0 +1,5 @@
+---
+# Listy of extensions to install
+# vscode_extensions:
+#   - ms-python.python
+vscode_extensions: []

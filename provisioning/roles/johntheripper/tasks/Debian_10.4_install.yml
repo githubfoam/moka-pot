@@ -1,0 +1,79 @@
+---
+- name: Install JohnTheRipper dependencies
+  apt:
+    name: '{{ jtr_packages }}'
+
+- name: Install OpenMPI libraries
+  apt:
+    name: '{{ jtr_openmpi_packages }}'
+  when: jtr_openmpi_support_enabled
+
+- name: Install rexgen
+  include: install_rexgen.yml
+  when: jtr_rexgen_support_enabled
+
+- name: Clone magnumripper JohnTheRipper repo
+  git:
+    repo: '{{ jtr_repo_url }}'
+    dest: '{{ jtr_src_dir }}'
+    version: '{{ jtr_repo_version }}'
+  register: clone_jtr
+
+- name: Configure JohnTheRipper
+  command: ./configure CPPFLAGS='-DJOHN_SYSTEMWIDE -DJOHN_SYSTEMWIDE_EXEC="\"/usr/local/bin\"" -DJOHN_SYSTEMWIDE_HOME="\"/usr/local/share/john\""'
+  args:
+    chdir: '{{ jtr_src_dir }}/src'
+  when: clone_jtr is changed
+
+- name: Clean JohnTheRipper
+  command: make -s clean
+  args:
+    chdir: '{{ jtr_src_dir }}/src'
+  when: clone_jtr is changed
+
+- name: Compile JohnTheRipper
+  command: make -sj4 strip
+  args:
+    chdir: '{{ jtr_src_dir }}/src'
+    creates: '{{ jtr_src_dir }}/run/john'
+  when: clone_jtr is changed
+
+- name: Remove DSYM files
+  shell: 'rm {{ jtr_src_dir }}/run/*.dSYM'
+  args:
+    warn: false
+  ignore_errors: true
+  when: clone_jtr is changed
+
+- name: Move executables to /usr/local/bin
+  shell: 'mv {{ jtr_src_dir }}/run/{{ item }} /usr/local/bin/'
+  loop:
+    - 'john'
+    - '*2john'
+    - 'unshadow'
+    - 'unique'
+    - 'undrop'
+    - 'unafs'
+    - 'base64conv'
+    - 'tgtsnarf'
+    - 'mkvcalcproba'
+    - 'genmkvpwd'
+    - 'calc_stat'
+    - 'raw2dyna'
+    - 'cprepair'
+    - 'SIPdump'
+  when: clone_jtr is changed
+  tags:
+    - skip_ansible_lint
+
+- name: Ensure /usr/local/share/john directory exists
+  file:
+    path: /usr/local/share/john
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy files to /usr/local/share/john
+  shell: 'cp -a {{ jtr_src_dir }}/run/* /usr/local/share/john'
+  when: clone_jtr is changed

@@ -18,9 +18,9 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # vagrant up --provider=libvirt "vg-mokapot-01"
 
 #https://github.com/chef/bento/tree/master/packer_templates/debian
-vagrant box add "bento/ubuntu-19.10" --provider=virtualbox
-vagrant mutate "bento/ubuntu-19.10" libvirt
-vagrant up --provider=libvirt "vg-mokapot-01"
+# vagrant box add "bento/ubuntu-19.10" --provider=virtualbox
+# vagrant mutate "bento/ubuntu-19.10" libvirt
+# vagrant up --provider=libvirt "vg-mokapot-01"
 
 # https://app.vagrantup.com/archlinux
 # vagrant box add "archlinux/archlinux" --provider=libvirt
@@ -39,8 +39,8 @@ vagrant up --provider=libvirt "vg-mokapot-05"
 # vagrant up --provider=libvirt "vg-mokapot-04"
 
 # https://app.vagrantup.com/archlinux
-vagrant box add "archlinux/archlinux" --provider=libvirt
-vagrant up --provider=libvirt "vg-mokapot-06"
+# vagrant box add "archlinux/archlinux" --provider=libvirt
+# vagrant up --provider=libvirt "vg-mokapot-06"
 
 # vagrant box add "freebsd/FreeBSD-12.1-STABLE" --provider=virtualbox
 # vagrant mutate "freebsd/FreeBSD-12.1-STABLE" libvirt

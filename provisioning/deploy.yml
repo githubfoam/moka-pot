@@ -25,9 +25,19 @@
   become: yes
   roles:
     - chromium
-    - burpsuite
+    - role: burpsuite
+      burpsuite_user: tester
     - ghidra
+    - role: vscode
+    - role: vscode-extensions
+      vscode_extensions:
+      - ms-python.python
+      - ms-vscode.go
     - docker
+    - role: johntheripper
+      jtr_local_src_dir: /usr/local/src
+      jtr_openmpi_support_enabled: true
+      jtr_rexgen_support_enabled: false
 
 # - name: "Build Ubuntu 19.10 (Eon) mokapot"
 #   gather_facts: true
