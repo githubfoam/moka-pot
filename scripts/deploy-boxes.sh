@@ -12,8 +12,8 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # https://www.debian.org/releases/
 
 #https://github.com/chef/bento/tree/master/packer_templates/debian
-vagrant box add "bento/bento/ubuntu-20.04" --provider=virtualbox
-vagrant mutate "bento/bento/ubuntu-20.04" libvirt
+vagrant box add "bento/ubuntu-20.04" --provider=virtualbox
+vagrant mutate "bento/ubuntu-20.04" libvirt
 vagrant up --provider=libvirt "vg-mokapot-01"
 
 #https://github.com/chef/bento/tree/master/packer_templates/debian

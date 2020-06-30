@@ -2,7 +2,6 @@
 - name: "Boot all hosts"
   gather_facts: true
   hosts:  all
-  #remote_user: vagrant
   become: yes
   vars:
     add_host_entries: true
