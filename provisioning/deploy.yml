@@ -20,12 +20,12 @@
     #- chromium #"No package matching 'chromium' is available"
     - burpsuite
 
-- name: "Build blackarch mokapot"
-  gather_facts: true
-  hosts:  vg-mokapot-02
-  become: yes
-  roles:
-    - blackarch
+# - name: "Build blackarch mokapot"
+#   gather_facts: true
+#   hosts:  vg-mokapot-02
+#   become: yes
+#   roles:
+#     - blackarch
 
 - name: "Build Debian GNU/Linux 10 (buster) mokapot"
   gather_facts: true
