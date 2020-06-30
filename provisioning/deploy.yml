@@ -39,7 +39,7 @@
     # - hcxtools #"No package matching 'wireguard' is available"
     # - hcxdumptool #openssl/evp.h: No such file or directory", " #include <openssl/evp.h>"
     # - wireguard #No package matching 'wireguard' is available
-    - powershell
+    #- powershell #Depends: libssl1.0.2 but it is not installable\n
     - impacket
     - nullinux
     - role: johntheripper
