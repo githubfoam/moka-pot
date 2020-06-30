@@ -22,3 +22,22 @@
   roles:
     - chromium
     - burpsuite
+
+- name: "Build Ubuntu 20.04 (Focal) mokapot"
+  gather_facts: true
+  hosts:  vg-mokapot-05
+  become: yes
+  vars:
+    foreman_db_pass: supersecret
+  roles:
+    - chromium
+    - burpsuite
+
+- name: "Build Archlinux mokapot"
+  gather_facts: true
+  hosts:  vg-mokapot-05
+  become: yes
+  vars:
+    foreman_db_pass: supersecret
+  roles:
+    - tor
