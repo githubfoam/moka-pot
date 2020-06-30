@@ -4,7 +4,15 @@ Travis (.com) dev branch:
 [![Build Status](https://travis-ci.com/githubfoam/moka-pot.svg?branch=ubuntu1904)](https://travis-ci.com/githubfoam/moka-pot)  
 
 ~~~~
+Debian buster64
+https://github.com/ZerBea/hcxdumptool
+https://github.com/ZerBea/hcxtools
 
+Archlinux
+https://github.com/ZerBea/hcxdumptool
+https://github.com/ZerBea/hcxtools
+~~~~
+~~~~
 >vagrant up vg-mokapot-01
 
 ==> vg-mokapot-01: Running provisioner: ansible_local...

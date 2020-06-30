@@ -1,0 +1,12 @@
+---
+hcxtools_packages:
+  - build-essential
+  - git
+  - libcurl4-openssl-dev
+  - libpcap-dev
+  - libpthread-stubs0-dev
+  - libssl-dev
+  - zlib1g-dev
+
+hcxtools_repo_url: "https://github.com/ZerBea/hcxtools"
+hcxtools_repo_version: master
