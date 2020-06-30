@@ -5,6 +5,7 @@
     - "{{ ansible_os_family }}.yml"
     -  "{{ ansible_distribution }}_{{ ansible_distribution_version }}.yml"
     - default.yaml
+  skip: true
 
 - name: "Install system packages"
   package:
