@@ -23,8 +23,8 @@ vagrant mutate "bento/ubuntu-19.10" libvirt
 vagrant up --provider=libvirt "vg-mokapot-01"
 
 # https://app.vagrantup.com/archlinux
-vagrant box add "archlinux/archlinux" --provider=libvirt
-vagrant up --provider=libvirt "vg-mokapot-02"
+# vagrant box add "archlinux/archlinux" --provider=libvirt
+# vagrant up --provider=libvirt "vg-mokapot-02"
 
 #https://github.com/chef/bento/tree/master/packer_templates/debian
 vagrant box add "bento/debian-10.4" --provider=virtualbox
