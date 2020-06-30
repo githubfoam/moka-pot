@@ -11,20 +11,19 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 
 # https://www.debian.org/releases/
 
-# https://github.com/chef/bento/tree/master/packer_templates/debian
-vagrant box add "bento/debian-9.12" --provider=virtualbox
-vagrant mutate "bento/debian-9.12" libvirt
-vagrant up --provider=libvirt "vg-mokapot-04"
-
-#/opt/vagrant/embedded/gems/2.2.9/gems/vagrant-2.2.9/plugins/provisioners/ansible/cap/guest/posix/ansible_installed.rb:13:in `ansible_installed': undefined method `empty?' for nil:NilClass (NoMethodError)
 #https://github.com/chef/bento/tree/master/packer_templates/debian
 vagrant box add "bento/debian-10.4" --provider=virtualbox
 vagrant mutate "bento/debian-10.4" libvirt
 vagrant up --provider=libvirt "vg-mokapot-05"
 
+# https://github.com/chef/bento/tree/master/packer_templates/debian
+vagrant box add "bento/debian-9.12" --provider=virtualbox
+vagrant mutate "bento/debian-9.12" libvirt
+vagrant up --provider=libvirt "vg-mokapot-04"
+
 # https://app.vagrantup.com/archlinux
 vagrant box add "archlinux/archlinux" --provider=libvirt
-vagrant up --provider=libvirt vg-arch-01
+vagrant up --provider=libvirt "vg-mokapot-06"
 
 # # vagrant cloud debian box specific
 # # adapter to enable NFS on this machine for Vagrant.

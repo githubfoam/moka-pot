@@ -8,11 +8,11 @@
     - " ansible_distribution_release: {{ hostvars[inventory_hostname].ansible_distribution_release }}"
     - " ansible_distribution_version: {{ hostvars[inventory_hostname].ansible_distribution_version }}"
 
-# - name: "Add /etc/hosts entries"
-#   include_tasks: hosts_entry.yml
-#
-# - name: "Add /etc/resolv.conf entries"
-#   include_tasks: resolv_entry.yml
+- name: "Add /etc/hosts entries"
+  include_tasks: hosts_entry.yml
+
+- name: "Add /etc/resolv.conf entries"
+  include_tasks: resolv_entry.yml
 #
 # - name: "Install required packages"
 #   package:
@@ -25,6 +25,6 @@
 #     name: "{{ common_default_redhat_reqs }}"
 #     state: present
 #   when: " ansible_os_family == 'RedHat' and ansible_distribution in ['CentOS','Scientific'] "
-#
-# - name: "Install {{ ansible_distribution }}-{{ ansible_distribution_version }}"
-#   include_tasks: "{{ ansible_distribution }}_{{ ansible_distribution_version }}_install.yml"
+
+- name: "Install {{ ansible_distribution }}-{{ ansible_distribution_version }}"
+  include_tasks: "{{ ansible_distribution }}_{{ ansible_distribution_version }}_install.yml"
