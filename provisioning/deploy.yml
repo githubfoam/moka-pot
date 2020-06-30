@@ -37,6 +37,8 @@
     - bettercap
     - empire
     - hcxtools
+    - hcxdumptool
+    - wireGuard
     - role: johntheripper
       jtr_local_src_dir: /usr/local/src
       jtr_openmpi_support_enabled: true

@@ -1,0 +1,10 @@
+---
+- name: Install WireGuard package dependencies
+  apt:
+    name: "{{ wireguard_packages }}"
+
+- name: Setup resolvconf
+  service:
+    name: resolvconf
+    state: started
+    enabled: true
