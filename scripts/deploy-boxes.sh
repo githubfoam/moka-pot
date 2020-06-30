@@ -22,7 +22,9 @@ vagrant box add "bento/debian-10.4" --provider=virtualbox
 vagrant mutate "bento/debian-10.4" libvirt
 vagrant up --provider=libvirt "vg-mokapot-05"
 
-
+# https://app.vagrantup.com/archlinux
+vagrant box add "archlinux/archlinux" --provider=libvirt
+vagrant up --provider=libvirt vg-arch-01
 
 # # vagrant cloud debian box specific
 # # adapter to enable NFS on this machine for Vagrant.
