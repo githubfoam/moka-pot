@@ -1,0 +1,19 @@
+---
+- name: Install Impacket package dependencies
+  apt:
+    name: "{{ impacket_packages }}"
+
+- name: Clone Impacket repo
+  git:
+    repo: "{{ impacket_repo_url }}"
+    dest: "{{ impacket_src_dir }}"
+    version: "{{ impacket_repo_version }}"
+    recursive: true
+    force: true
+  register: clone_impacket
+
+- name: Install Impacket
+  command: pip2 install .
+  args:
+    chdir: "{{ impacket_src_dir }}"
+  when: "clone_impacket is changed"

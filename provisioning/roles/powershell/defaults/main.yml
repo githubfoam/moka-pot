@@ -1,0 +1,3 @@
+---
+powershell_user_profile: /root/.bashrc
+powershell_disable_telemetry: true

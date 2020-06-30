@@ -7,9 +7,10 @@ Travis (.com) dev branch:
 Debian buster64
 https://github.com/ZerBea/hcxdumptool
 https://github.com/ZerBea/hcxtools
+https://github.com/SecureAuthCorp/impacket
+https://github.com/m8r0wn/nullinux
 
 Archlinux
-https://github.com/ZerBea/hcxdumptool
 https://github.com/ZerBea/hcxtools
 ~~~~
 ~~~~

@@ -1,0 +1,7 @@
+---
+impacket_packages:
+  - git
+  - python-pip
+
+impacket_repo_url: "https://github.com/SecureAuthCorp/impacket.git"
+impacket_repo_version: master

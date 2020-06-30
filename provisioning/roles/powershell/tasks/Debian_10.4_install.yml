@@ -1,0 +1,47 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ posh_dep_packages }}"
+    state: present
+
+- name: Install dependencies not found in Kali repository
+  apt:
+    deb: "{{ item }}"
+  loop: "{{ posh_debian_packages | flatten(levels=1) }}"
+  when: "'kali' in ansible_distribution_release"
+
+- name: Add Microsoft apt key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Add Microsoft apt repository
+  apt_repository:
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main
+    state: present
+    filename: powershell
+
+- name: Install PowerShell
+  apt:
+    name: powershell
+    state: present
+    update_cache: true
+
+- name: Create PowerShell directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: staff
+    mode: 02775
+  loop:
+    - /usr/local/share/powershell
+    - /usr/local/share/powershell/Modules
+
+- name: Disable telemetry
+  blockinfile:
+    path: "{{ powershell_user_profile }}"
+    block: |
+      export POWERSHELL_TELEMETRY_OPTOUT=1
+    marker: "# {mark} ANSIBLE MANAGED BLOCK - powershell"
+    state: "{{ powershell_disable_telemetry | ternary('present', 'absent') }}"

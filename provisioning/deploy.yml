@@ -38,7 +38,10 @@
     - empire
     - hcxtools
     - hcxdumptool
-    - wireGuard
+    - wireguard
+    - powershell
+    - impact
+    - nullinux
     - role: johntheripper
       jtr_local_src_dir: /usr/local/src
       jtr_openmpi_support_enabled: true
