@@ -29,10 +29,10 @@
       burpsuite_user: vagrant
     - ghidra
     - role: vscode
-    - role: vscode-extensions
-      vscode_extensions:
-      - ms-python.python
-      - ms-vscode.go
+    # - role: vscode-extensions #Extension 'ms-vscode.go' not found.
+    #   vscode_extensions:
+    #   - ms-python.python
+    #   - ms-vscode.go
     - docker
     - bettercap
     - empire
