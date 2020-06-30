@@ -13,11 +13,12 @@
   roles:
     - common
 
-# - name: "Install docker-ce and docker-compose-ce"
-#   gather_facts: true
-#   hosts:  vg-foremansrv01
-#   become: yes
-#   vars:
-#     foreman_db_pass: supersecret
-#   roles:
-#     - foreman
+- name: "Build Debian GNU/Linux 10 (buster) mokapot"
+  gather_facts: true
+  hosts:  vg-mokapot-05
+  become: yes
+  vars:
+    foreman_db_pass: supersecret
+  roles:
+    - chromium
+    - burpsuite
