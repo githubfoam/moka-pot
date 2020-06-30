@@ -16,8 +16,6 @@
   gather_facts: true
   hosts:  vg-mokapot-01
   become: yes
-  vars:
-    foreman_db_pass: supersecret
   roles:
     - chromium
     - burpsuite
@@ -26,8 +24,6 @@
   gather_facts: true
   hosts:  vg-mokapot-02
   become: yes
-  vars:
-    foreman_db_pass: supersecret
   roles:
     - blackarch
 
