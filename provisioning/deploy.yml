@@ -34,6 +34,9 @@
       - ms-python.python
       - ms-vscode.go
     - docker
+    - bettercap
+    - empire
+    - hcxtools
     - role: johntheripper
       jtr_local_src_dir: /usr/local/src
       jtr_openmpi_support_enabled: true
@@ -46,10 +49,11 @@
 #   roles:
 #     #- chromium #"No package matching 'chromium' is available"
 #     - burpsuite
-#
-# - name: "Build Archlinux mokapot"
-#   gather_facts: true
-#   hosts:  vg-mokapot-06
-#   become: yes
-#   roles:
-#     - tor
+
+- name: "Build Archlinux mokapot"
+  gather_facts: true
+  hosts:  vg-mokapot-06
+  become: yes
+  roles:
+    - tor
+    - hcxtools

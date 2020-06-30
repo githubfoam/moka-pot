@@ -39,8 +39,8 @@ vagrant up --provider=libvirt "vg-mokapot-05"
 # vagrant up --provider=libvirt "vg-mokapot-04"
 
 # https://app.vagrantup.com/archlinux
-# vagrant box add "archlinux/archlinux" --provider=libvirt
-# vagrant up --provider=libvirt "vg-mokapot-06"
+vagrant box add "archlinux/archlinux" --provider=libvirt
+vagrant up --provider=libvirt "vg-mokapot-06"
 
 # vagrant box add "freebsd/FreeBSD-12.1-STABLE" --provider=virtualbox
 # vagrant mutate "freebsd/FreeBSD-12.1-STABLE" libvirt
