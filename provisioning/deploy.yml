@@ -38,7 +38,7 @@
     # - empire #"No package matching 'libssl1.0.2' is available"
     # - hcxtools #"No package matching 'wireguard' is available"
     # - hcxdumptool #openssl/evp.h: No such file or directory", " #include <openssl/evp.h>"
-    - wireguard
+    # - wireguard #No package matching 'wireguard' is available
     - powershell
     - impacket
     - nullinux
