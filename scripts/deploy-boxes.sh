@@ -31,6 +31,11 @@ vagrant box add "bento/debian-10.4" --provider=virtualbox
 vagrant mutate "bento/debian-10.4" libvirt
 vagrant up --provider=libvirt "vg-mokapot-05"
 
+# https://app.vagrantup.com/archlinux
+# vagrant box add "archlinux/archlinux" --provider=libvirt
+# vagrant up --provider=libvirt "vg-mokapot-06"
+
+
 # OK with bento/debian-10.4 though
 #The error appears to have been in '/vagrant/provisioning/roles/common/tasks/main.yml': line 11, column 3, but may
 # https://github.com/chef/bento/tree/master/packer_templates/debian
@@ -38,9 +43,7 @@ vagrant up --provider=libvirt "vg-mokapot-05"
 # vagrant mutate "bento/debian-9.12" libvirt
 # vagrant up --provider=libvirt "vg-mokapot-04"
 
-# https://app.vagrantup.com/archlinux
-vagrant box add "archlinux/archlinux" --provider=libvirt
-vagrant up --provider=libvirt "vg-mokapot-06"
+
 
 # vagrant box add "freebsd/FreeBSD-12.1-STABLE" --provider=virtualbox
 # vagrant mutate "freebsd/FreeBSD-12.1-STABLE" libvirt
