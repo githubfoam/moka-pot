@@ -17,7 +17,8 @@
     block: |
       [blackarch]
       Include = /etc/pacman.d/{{ ansible_blackarch.mirror }}
-- name: Install BlackArch categories
+
+- name: Install BlackArch categories #"could not update package db"
   pacman:
     name: "{{ ansible_blackarch.categories }}"
     update_cache: yes

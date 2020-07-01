@@ -8,15 +8,6 @@
     - " ansible_distribution_release: {{ hostvars[inventory_hostname].ansible_distribution_release }}"
     - " ansible_distribution_version: {{ hostvars[inventory_hostname].ansible_distribution_version }}"
 
-# - debug:
-#     msg: "{{ vars[(role_path | basename).split('.')[-1].replace('-','_')] }}"
-#   when: DEBUG | d() | bool
-#
-# - include_tasks: prepare.yml
-# - include_tasks: configure.yml
-# - include_tasks: install.yml
-
-
 - name: Check if blackarch repository is present
   command: pacman -Sl blackarch
   register: blackarch_present
