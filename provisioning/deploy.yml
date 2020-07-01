@@ -62,7 +62,7 @@
   hosts:  vg-mokapot-06
   become: yes
   roles:
-    - tor
+    #- tor #The requested handler 'reload systemd config' was not found in either the main handlers list nor in the listening handlers list
     - hcxtools
     - mokapot
     - nipper
