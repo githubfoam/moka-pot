@@ -5,7 +5,7 @@ mokapot_debian_reqs:
   - recon-ng
   - hping3
   - hashcat
-  - nikto
+  #- nikto #"No package matching 'nikto' is available"
   - nmap
   - traceroute
   - mtr
