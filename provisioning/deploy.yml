@@ -17,8 +17,7 @@
   hosts:  vg-mokapot-02
   become: yes
   roles:
-    - role{blackarch1, x:42}
-    # - blackarch1
+    - blackarch1
 
 - name: "Build blackarch"
   gather_facts: true
