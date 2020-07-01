@@ -64,5 +64,5 @@
   roles:
     - tor
     - hcxtools
-    # - mokapot
+    - mokapot
     - nipper
