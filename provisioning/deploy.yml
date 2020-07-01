@@ -42,7 +42,7 @@
     #- powershell #Depends: libssl1.0.2 but it is not installable\n
     - impacket
     - nullinux
-    # - mokapot
+    - mokapot
     - nipper
     # - role: johntheripper # cannot remove '/usr/local/src/JohnTheRipper/run/*.dSYM': No such file or directory",
     #   jtr_local_src_dir: /usr/local/src
@@ -57,12 +57,12 @@
 #     #- chromium #"No package matching 'chromium' is available"
 #     - burpsuite
 
-- name: "Build Archlinux mokapot"
-  gather_facts: true
-  hosts:  vg-mokapot-06
-  become: yes
-  roles:
-    - tor
-    - hcxtools
-    # - mokapot
-    - nipper
+# - name: "Build Archlinux mokapot"
+#   gather_facts: true
+#   hosts:  vg-mokapot-06
+#   become: yes
+#   roles:
+#     - tor
+#     - hcxtools
+#     # - mokapot
+#     - nipper
