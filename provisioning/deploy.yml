@@ -1,21 +1,23 @@
 ---
-- name: "Boot all hosts"
-  gather_facts: true
-  hosts:  all
-  become: yes
-  vars:
-    add_host_entries: true
-    add_resolv_entries: true
-  pre_tasks:
-  - name: "Setting hostname"
-    shell: "hostnamectl set-hostname {{ inventory_hostname }}"
-  roles:
-    - common
+# - name: "Boot all hosts"
+#   gather_facts: true
+#   hosts:  all
+#   become: yes
+#   vars:
+#     add_host_entries: true
+#     add_resolv_entries: true
+#   pre_tasks:
+#   - name: "Setting hostname"
+#     shell: "hostnamectl set-hostname {{ inventory_hostname }}"
+#   roles:
+#     - common
 
 - name: "Build blackarch"
   gather_facts: true
   hosts:  vg-mokapot-02
   vars:
+      add_host_entries: true
+      add_resolv_entries: true
       ansible_arch_blackarch:
         # Temporary installation files go here: /tmp/{{ prefix }}/...
         tmp: "BlackArch-1337"
@@ -82,8 +84,12 @@
           #- "blackarch-ids"
           #- "blackarch-spoff"
           #- "blackarch-gpu"
+  pre_tasks:
+  - name: "Setting hostname"
+    shell: "hostnamectl set-hostname {{ inventory_hostname }}"
   become: yes
   roles:
+    - common
     - blackarch
 
 # - name: "Build Debian GNU/Linux 10 (buster) mokapot"
