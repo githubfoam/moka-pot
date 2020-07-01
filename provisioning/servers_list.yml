@@ -69,16 +69,16 @@
 #   # ansible_version: "2.9.2" #ubuntu
 #   ansible_compatibility_mode: "2.0"
 
-# - vagrant_box_host: "vg-mokapot-06"
-#   vagrant_box: "archlinux/archlinux"
-#   vbox_name: "vbox-mokapot-06"
-#   vbox_ram: 4096
-#   vbox_cpu: 2
-#   network_type: "private_network"
-#   vagrant_box_ip: 192.168.20.14
-#   guest_port: 1235
-#   host_port: 1235
-#   server_bootstrap: "provisioning/deploy.yml"
-#   shell_provision: "provisioning/bootstrap.sh"
-#   # ansible_version: "2.9.2" #ubuntu
-#   ansible_compatibility_mode: "2.0"
+- vagrant_box_host: "vg-mokapot-06"
+  vagrant_box: "archlinux/archlinux"
+  vbox_name: "vbox-mokapot-06"
+  vbox_ram: 4096
+  vbox_cpu: 2
+  network_type: "private_network"
+  vagrant_box_ip: 192.168.20.14
+  guest_port: 1235
+  host_port: 1235
+  server_bootstrap: "provisioning/deploy.yml"
+  shell_provision: "provisioning/bootstrap.sh"
+  # ansible_version: "2.9.2" #ubuntu
+  ansible_compatibility_mode: "2.0"
