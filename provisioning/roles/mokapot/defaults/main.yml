@@ -21,35 +21,35 @@ mokapot_redhat_reqs:
   - tcpdump
   - ssdeep
 mokapot_arclinux_reqs:
-      - netctl
-      - openvpn
-      - wpa_supplicant
-      - aria2
-      - curl
-      - htop
-      - httpie
-      - iotop
-      - jq
-      - less
-      - nmap
-      - openssh
-      - ripgrep
-      - rsync
-      - shellcheck
-      - usbutils
-      - which
-      - chromium
-      - evince
-      - mpv
-      - pcmanfm
-      - viewnior
-      # - wapiti
-      # - recon-ng
-      # - hping3
-      # - hashcat
-      # - nikto
-      # - nmap
-      # - traceroute
-      # - mtr
-      # - tcpdump
-      # - ssdeep
+  - netctl
+  - openvpn
+  - wpa_supplicant
+  - aria2
+  - curl
+  - htop
+  - httpie
+  - iotop
+  - jq
+  - less
+  - nmap
+  - openssh
+  - ripgrep
+  - rsync
+  - shellcheck
+  - usbutils
+  - which
+  - chromium
+  - evince
+  - mpv
+  - pcmanfm
+  - viewnior
+  - wapiti
+  - recon-ng
+  - hping3
+  - hashcat
+  - nikto
+  - nmap
+  - traceroute
+  - mtr
+  - tcpdump
+  - ssdeep

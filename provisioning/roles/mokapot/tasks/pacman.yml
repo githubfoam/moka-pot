@@ -1,73 +1,9 @@
 ---
-- name: update pacman cache
-  pacman:
-    update_cache: true
-  #become: true
-
-- name: Install pacman tools
-  pacman:
-    name: pacman-contrib
-  #become: true
-
-- name: Install reflector
-  pacman:
-    name: reflector
-  #become: true
-
-- name: update pacman mirrorlist
-  script: update-mirrorlist.sh
-  #become: true
-
-- name: Install base metapackage
-  pacman:
-    name: base
-  #become: true
-
-- name: perform full upgrade
-  pacman:
-    upgrade: true
-    update_cache: true
-  #become: true
-
-
 - name: Install filesystem tools
   pacman:
     name:
       - cryptsetup
       - e2fsprogs
-
-
-# - name: Install tools
-#   pacman:
-#     name:
-#       - netctl
-#       - openvpn
-#       - wpa_supplicant
-#       - aria2
-#       - curl
-#       - htop
-#       - httpie
-#       - iotop
-#       - jq
-#       - less
-#       - nmap
-#       - openssh
-#       - ripgrep
-#       - rsync
-#       - shellcheck
-#       - usbutils
-#       - which
-#       - chromium
-#       - evince
-#       - mpv
-#       - pcmanfm
-#       - viewnior
-
-- name: "mokapot requirements"
-  package:
-    name: "{{ mokapot_arclinux_reqs }}"
-    state: present
-
 
 - name: Install python development tools
   pacman:
@@ -86,3 +22,8 @@
       - base-devel
       - gdb
       - valgrind
+
+- name: "mokapot requirements"
+  package:
+    name: "{{ mokapot_arclinux_reqs }}"
+    state: present
