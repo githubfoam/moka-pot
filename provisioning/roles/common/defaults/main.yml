@@ -1,10 +1,12 @@
 ---
 # defaults file for common
 common_default_debian_reqs:
+  - git
   - unzip
   - tar
   - build-essential
 common_default_redhat_reqs:
+  - git
   - unzip
   - tar
   - socat
