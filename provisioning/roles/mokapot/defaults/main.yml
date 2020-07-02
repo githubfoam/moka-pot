@@ -43,9 +43,9 @@ mokapot_arclinux_reqs:
   - mpv
   - pcmanfm
   - viewnior
-  - wapiti
-  - recon-ng
-  - hping3
+  # - wapiti
+  # - recon-ng
+  # - hping3
   - hashcat
   - nikto
   - nmap
