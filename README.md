@@ -1,7 +1,7 @@
 # moka-pot
 
 Travis (.com) dev branch:
-[![Build Status](https://travis-ci.com/githubfoam/moka-pot.svg?branch=ubuntu1904)](https://travis-ci.com/githubfoam/moka-pot)  
+[![Build Status](https://travis-ci.com/githubfoam/moka-pot.svg?branch=master)](https://travis-ci.com/githubfoam/moka-pot)  
 
 debian buster64
 ~~~~
