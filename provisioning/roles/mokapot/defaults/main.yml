@@ -21,7 +21,7 @@ mokapot_debian_reqs:
   - scapy #packet manipulation tool, packet generator, network scanner, network discovery, packet sniffer
   - netsniff-ng #network development and analysis, debugging, auditing or network reconnaissance http://netsniff-ng.org/
   - hydra #parallelized login cracker
-  - dig #DNS lookup utility
+  - dnsutils # dig DNS lookup utility
   - nc #arbitrary TCP and UDP connections and listens
   - dirb #web Content Scanner
   - aircrack-ng #Wireless Security Auditing

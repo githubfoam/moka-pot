@@ -5,29 +5,50 @@ Travis (.com) dev branch:
 
 debian buster64
 ~~~~
-socat
-net-tools
-wapiti
-recon-ng
-hping3
-hashcat https://github.com/hashcat/hashcat  
-nmap https://nmap.org
-traceroute
-mtr
-tcpdump https://www.tcpdump.org
-ssdeep https://ssdeep-project.github.io/ssdeep/index.html
-chromium
-burpsuite
-ghidra
-docker
-impacket https://github.com/SecureAuthCorp/impacket
-nullinux https://github.com/m8r0wn/nullinux
-nipper https://github.com/arpitn30/nipper-ng
-
 Linux Malware Detect (LMD) https://www.rfxn.com/projects/linux-malware-detect/
 yara rules https://github.com/Hestat/lw-yara
 blazescan https://github.com/Hestat/blazescan
 clamav https://www.clamav.net/downloads
+
+- chromium
+- burpsuite
+- ghidra
+- impacket https://github.com/SecureAuthCorp/impacket
+- nullinux https://github.com/m8r0wn/nullinux
+- nipper https://github.com/arpitn30/nipper-ng
+- docker
+
+mokapot(baseline)
+- git
+- wapiti
+- recon-ng
+- hping3
+- hashcat https://github.com/hashcat/hashcat  
+- nmap https://nmap.org
+- traceroute
+- mtr
+- tcpdump
+- ssdeep https://ssdeep-project.github.io/ssdeep/index.html
+- aircrack-ng
+- kismet
+- dirb
+- hydra
+- sec
+- xxd # hexdump, dd
+- gddrescue #ddrescue
+- wireshark
+- scapy
+- sleuthkit
+- autopsy
+- netsniff-ng
+- dnsutils # dig DNS lookup utility
+
+- socat
+- traceroute
+- mtr
+- tcpdump https://www.tcpdump.org
+- net-tools
+
 ~~~~
 archlinux
 ~~~~
