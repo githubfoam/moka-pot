@@ -3,11 +3,6 @@
 common_default_debian_reqs:
   - unzip
   - tar
-  - socat
-  - traceroute
-  - mtr
-  - tcpdump
-  - net-tools
   - build-essential
 common_default_redhat_reqs:
   - unzip
