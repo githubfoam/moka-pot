@@ -53,3 +53,4 @@ mokapot_arclinux_reqs:
   - mtr
   - tcpdump
   - ssdeep
+  - socat

@@ -1,6 +1,6 @@
 ---
-- name: Install hcxtools
+- name: Install hcxdumptool
   pacman:
     name:
-      - hcxtools
+      - hcxdumptool
     state: present

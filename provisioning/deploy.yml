@@ -63,6 +63,7 @@
   become: yes
   roles:
     #- tor #The requested handler 'reload systemd config' was not found in either the main handlers list nor in the listening handlers list
+    - nipper
+    - hcxdumptool
     - hcxtools
     - mokapot
-    - nipper
