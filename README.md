@@ -3,16 +3,44 @@
 Travis (.com) dev branch:
 [![Build Status](https://travis-ci.com/githubfoam/moka-pot.svg?branch=ubuntu1904)](https://travis-ci.com/githubfoam/moka-pot)  
 
+debian buster64
 ~~~~
-Debian buster64
-https://github.com/ZerBea/hcxdumptool
-https://github.com/ZerBea/hcxtools
-https://github.com/SecureAuthCorp/impacket
-https://github.com/m8r0wn/nullinux
+socat
+net-tools
+wapiti
+recon-ng
+hping3
+hashcat https://github.com/hashcat/hashcat  
+nmap https://nmap.org
+traceroute
+mtr
+tcpdump https://www.tcpdump.org
+ssdeep https://ssdeep-project.github.io/ssdeep/index.html
+chromium
+burpsuite
+ghidra
+docker
+impacket https://github.com/SecureAuthCorp/impacket
+nullinux https://github.com/m8r0wn/nullinux
+nipper https://github.com/arpitn30/nipper-ng
+~~~~
+archlinux
+~~~~
+hcxdumptool https://github.com/ZerBea/hcxdumptool
+hcxtools https://github.com/ZerBea/hcxtools
+~~~~
+blackarchlinux
+~~~~
+hcxdumptool https://github.com/ZerBea/hcxdumptool
+hcxtools https://github.com/ZerBea/hcxtools
+~~~~
+~~~~
+parrot https://www.parrotsec.org/
+freebsd https://www.freebsd.org/
+openbsd https://www.openbsd.org/
+netbsd https://www.netbsd.org/
+~~~~
 
-Archlinux
-https://github.com/ZerBea/hcxtools
-~~~~
 ~~~~
 >vagrant up vg-mokapot-01
 
@@ -33,50 +61,5 @@ with prior Ansible releases. A future Ansible release will default to using the
  feature will be removed in version 2.12. Deprecation warnings can be disabled
 by setting deprecation_warnings=False in ansible.cfg.
 ok: [vg-mokapot-01]
-
-~~~~
-
-~~~~
-
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-|  nipper              | Network Infrastructure Parser, Previously known as CiscoParser, network devices security auditing, Device security configuration review         | <https://github.com/arpitn30/nipper-ng>   |
-
-
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-|  tcpdump              | packet analyzer        | <https://www.tcpdump.org/>   |
-|  hping3          | TCP/IP packet assembler/analyzer  |    |
-
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-| hashcat               | password recovery        | <https://github.com/hashcat/hashcat>   |
-
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-|  mtr                 | network diagnostic tool  |    |
-|  traceroute          | network diagnostic tool  |    |
-|  nmap          | Security Scanner, Port Scanner, Network Exploration Too | <https://nmap.org/> |
-
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-| nikto                 | Web Vulnerability Scanner   |    |
-| recon-ng              | Web Reconnaissance framework |    |
-| wapiti              | web application vulnerability scanner |    |
-
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-| ssdeep                 | fuzzy hashing   | <https://ssdeep-project.github.io/ssdeep/index.html>    |
-
-
-| Kali Linuz Tool      | <https://tools.kali.org/tools-listing> |
-| ---------------------|---------:|
-|  nipper              |  Reporting Tools        |
-
-
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-| blazescan                 | fuzzy hashing   |   |
-| maldet                    | fuzzy hashing   |   |
 
 ~~~~
