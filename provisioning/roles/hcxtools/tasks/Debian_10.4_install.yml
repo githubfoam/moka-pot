@@ -1,0 +1,23 @@
+---
+- name: Install hcxtools dependencies
+  apt:
+    name: "{{ hcxtools_packages }}"
+
+- name: Clone hcxtools repo
+  git:
+    repo: "{{ hcxtools_repo_url }}"
+    dest: "{{ hcxtools_src_dir }}"
+    version: "{{ hcxtools_repo_version }}"
+  register: clone_hcxtools
+
+- block:
+    - name: Make hcxtools
+      command: make
+      args:
+        chdir: "{{ hcxtools_src_dir }}"
+
+    - name: Install hcxtools
+      command: make install
+      args:
+        chdir: "{{ hcxtools_src_dir }}"
+  when: "clone_hcxtools is changed"

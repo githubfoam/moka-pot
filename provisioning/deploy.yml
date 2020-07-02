@@ -11,21 +11,19 @@
     shell: "hostnamectl set-hostname {{ inventory_hostname }}"
   roles:
     - common
-- name: "Install mokapot"
+
+- name: "Build Debian GNU/Linux 10 (buster) mokapot"
   gather_facts: true
-  hosts:  vg-mokapot-01
+  hosts:  vg-mokapot-05
   become: yes
   roles:
-    - mokapot
-- name: "Install mokapot"
-  gather_facts: true
-  hosts:  vg-mokapot-02
-  become: yes
-  roles:
-    - mokapot
-- name: "Install mokapot"
-  gather_facts: true
-  hosts:  vg-mokapot-03
-  become: yes
-  roles:
-    - mokapot
+    - mokapot #baseline
+    - chromium
+    - role: burpsuite
+      burpsuite_user: vagrant
+    - ghidra
+    - role: vscode
+    - docker
+    - impacket
+    - nullinux
+    - nipper

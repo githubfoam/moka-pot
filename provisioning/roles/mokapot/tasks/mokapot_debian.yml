@@ -20,24 +20,23 @@
 - name: "Install mokapot requirements"
   apt:
     name: "{{ mokapot_debian_reqs }}"
-    state: latest
-    update_cache: yes
-- name: "git checkout nipper"
-  git:
-    repo: 'https://github.com/arpitn30/nipper-ng.git'
-    dest: /tmp/mokapot/nipper-ng
-    clone: yes
-    update: no
-- name: "Make nipper-ng"
-  shell: make chdir=/tmp/mokapot/nipper-ng/0.11.10 >> /tmp/nipper-ng_make.out
-  args:
-    chdir: /tmp
-    creates: nipper-ng_make.out
-- name: "Make install nipper-ng"
-  shell: make install chdir=/tmp/mokapot/nipper-ng/0.11.10 >> /tmp/nipper-ng_makeinstall.out
-  args:
-    chdir: /tmp
-    creates: nipper-ng_makeinstall.out
-- name: "nipper --version"
-  shell: nipper --version
-  register: nipperreg
+    state: present
+# - name: "git checkout nipper"
+#   git:
+#     repo: 'https://github.com/arpitn30/nipper-ng.git'
+#     dest: /tmp/mokapot/nipper-ng
+#     clone: yes
+#     update: no
+# - name: "Make nipper-ng"
+#   shell: make chdir=/tmp/mokapot/nipper-ng/0.11.10 >> /tmp/nipper-ng_make.out
+#   args:
+#     chdir: /tmp
+#     creates: nipper-ng_make.out
+# - name: "Make install nipper-ng"
+#   shell: make install chdir=/tmp/mokapot/nipper-ng/0.11.10 >> /tmp/nipper-ng_makeinstall.out
+#   args:
+#     chdir: /tmp
+#     creates: nipper-ng_makeinstall.out
+# - name: "nipper --version"
+#   shell: nipper --version
+#   register: nipperreg

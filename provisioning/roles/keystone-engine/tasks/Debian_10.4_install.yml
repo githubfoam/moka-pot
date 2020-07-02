@@ -1,0 +1,40 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ keystone_dep_packages }}"
+    state: present
+
+- name: Clone Keystone engine repo
+  git:
+    repo: "{{ keystone_repo_url }}"
+    version: master
+    dest: "{{ keystone_local_src_dir }}"
+  register: clone_keystone
+
+- block:
+    - name: Create build directory
+      file:
+        path: "{{ keystone_local_src_dir }}/build"
+        state: directory
+
+    - name: Compile library
+      command: ../make-share.sh
+      args:
+        chdir: "{{ keystone_local_src_dir }}/build"
+
+    - name: Make install
+      command: make install
+      args:
+        chdir: "{{ keystone_local_src_dir }}/build"
+
+    - name: Run ldconfig
+      command: ldconfig
+      args:
+        chdir: "{{ keystone_local_src_dir }}/build"
+
+    - name: Install Python 3 bindings
+      command: make install3
+      args:
+        chdir: "{{ keystone_local_src_dir }}/bindings/python"
+
+  when: "clone_keystone is changed"

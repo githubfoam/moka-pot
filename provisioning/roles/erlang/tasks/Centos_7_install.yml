@@ -1,0 +1,14 @@
+---
+- name: "Install erlang.repo"
+  become: "true"
+  template:
+    src: "erlang.repo.j2"
+    dest: "/etc/yum.repos.d/erlang.repo"
+    mode: "0600"
+    force: "yes"
+
+- name: "Install erlang"
+  become: "true"
+  yum:
+    name: "erlang"
+    state: "present"

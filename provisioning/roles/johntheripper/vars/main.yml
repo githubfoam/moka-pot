@@ -1,0 +1,29 @@
+---
+
+jtr_packages:
+  - build-essential
+  - libssl-dev
+  - git
+  - zlib1g-dev
+  # Recommended (extra formats and performance)
+  - yasm
+  - libgmp-dev
+  - libpcap-dev
+  - pkg-config
+  - libbz2-dev
+
+jtr_openmpi_packages:
+  # Optional MPI support
+  - libopenmpi-dev
+  - openmpi-bin
+
+jtr_rexgen_packages:
+  - cmake
+  - bison
+  - flex
+  - libicu-dev
+
+jtr_repo_url: 'https://github.com/magnumripper/JohnTheRipper.git'
+jtr_repo_version: bleeding-jumbo
+
+jtr_rexgen_repo_url: 'https://github.com/teeshop/rexgen.git'

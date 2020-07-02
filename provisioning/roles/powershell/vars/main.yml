@@ -1,0 +1,8 @@
+---
+posh_dep_packages:
+  - apt-transport-https
+  - gnupg
+  - less
+
+posh_debian_packages:
+  - "http://ftp.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u2_amd64.deb"

@@ -1,0 +1,22 @@
+---
+- name: Download blackarch-mirrorlist
+  get_url:
+    url: "{{ mirrorlist_url }}"
+    dest: "{{ mirrorlist_path }}"
+
+- name: Uncomment all https USA mirrors
+  replace:
+    path: "{{ mirrorlist_path }}"
+    after: "# USA"
+    before: "# Vietnam"
+    regexp: '^# (Server = https.+)$'
+    replace: '\1'
+
+- name: Add blackarch-mirrorlist to pacman.conf
+  blockinfile:
+    path: /etc/pacman.conf
+    insertafter: EOF
+    block: |
+      [blackarch]
+      Include = {{ mirrorlist_path }}
+  notify: update pacman

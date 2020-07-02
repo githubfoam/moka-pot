@@ -1,0 +1,129 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ empire_apt_dependencies }}"
+    state: present
+
+- name: Clone Empire git repository
+  git:
+    repo: "{{ empire_repo_url }}"
+    dest: "{{ empire_dir }}"
+    version: "{{ empire_repo_version }}"
+    force: true
+  register: clone_empire
+
+- block:
+    - name: Install pip requirements
+      pip:
+        requirements: "{{ empire_dir }}/setup/requirements.txt"
+
+    - name: Install Ansible Python modules
+      pip:
+        name: "{{ item }}"
+      loop:
+        - pyOpenSSL
+
+    - name: Check if xar exists
+      stat:
+        path: /usr/local/bin/xar
+      changed_when: false
+      register: xar_bin
+
+    - name: Get xar version
+      command: xar --version
+      when: xar_bin.stat.exists
+      changed_when: false
+      register: xar_version
+
+    # Compile and install xar
+    - block:
+        - name: Extract xar
+          unarchive:
+            src: "{{ empire_dir }}/data/misc/xar-{{ empire_xar_version }}.tar.gz"
+            remote_src: true
+            dest: "{{ empire_dir }}/setup"
+
+        - name: Configure xar
+          command: ./configure
+          args:
+            chdir: "{{ empire_dir }}/setup/xar-{{ empire_xar_version }}"
+
+        - name: Make xar
+          command: make
+          args:
+            chdir: "{{ empire_dir }}/setup/xar-{{ empire_xar_version }}"
+
+        - name: Install xar
+          command: make install
+          args:
+            chdir: "{{ empire_dir }}/setup/xar-{{ empire_xar_version }}"
+      when: "not xar_bin.stat.exists or empire_xar_version not in xar_version.stdout"
+
+    - name: Check if mkbom exists
+      stat:
+        path: /usr/bin/mkbom
+      register: mkbom_bin
+
+    # Compile and install bomutils
+    - block:
+        - name: Clone bomutils git repository
+          git:
+            repo: https://github.com/hogliux/bomutils.git
+            dest: "{{ empire_dir }}/setup/bomutils"
+            version: master
+
+        - name: Make bomutils
+          command: make
+          args:
+            chdir: "{{ empire_dir }}/setup/bomutils"
+
+        - name: Install bomutils
+          command: make install
+          args:
+            chdir: "{{ empire_dir }}/setup/bomutils"
+      when: "not mkbom_bin.stat.exists"
+
+    - name: Setup database schema
+      command: python ./setup_database.py
+      args:
+        chdir: "{{ empire_dir }}/setup"
+        creates: "{{ empire_dir }}/data/empire.db"
+      environment:
+        STAGING_KEY: RANDOM
+      register: database_schema
+
+    - name: Generate private key
+      openssl_privatekey:
+        path: "{{ empire_dir }}/data/empire-priv.key"
+
+    - name: Generate certificate signing request
+      openssl_csr:
+        path: "{{ empire_dir }}/data/empire-req.csr"
+        force: false
+        privatekey_path: "{{ empire_dir }}/data/empire-priv.key"
+        country_name: US
+
+    - name: Generate self-signed certificate
+      openssl_certificate:
+        path: "{{ empire_dir }}/data/empire-chain.pem"
+        privatekey_path: "{{ empire_dir }}/data/empire-priv.key"
+        csr_path: "{{ empire_dir }}/data/empire-req.csr"
+        provider: selfsigned
+
+    - name: Ensure PowerShell modules directory exists
+      file:
+        path: /usr/local/share/powershell/Modules
+        state: directory
+        owner: root
+        group: staff
+        mode: 02775
+
+    # Ansible 2.8 will support recursive copying with remote_src
+    # - name: Copy Invoke-Obfuscation PowerShell modules
+    #   copy:
+    #     src: "{{ empire_dir }}/lib/powershell/Invoke-Obfuscation"
+    #     dest: /usr/local/share/powershell/Modules/Invoke-Obfuscation
+    #     remote_src: true
+    - name: Copy Invoke-Obfuscation PowerShell modules
+      command: cp -R {{ empire_dir }}/lib/powershell/Invoke-Obfuscation /usr/local/share/powershell/Modules/
+  when: "clone_empire is changed"

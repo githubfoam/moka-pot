@@ -1,0 +1,15 @@
+---
+- name: Remove signature
+  file:
+    path: "/tmp/{{ keyring_filename }}.sig"
+    state: absent
+
+- name: Install keyring
+  command: pacman --config /dev/null --noconfirm -U "{{ keyring_filename }}"
+  args:
+    chdir: /tmp
+  changed_when: false
+
+- name: Populate keyring
+  command: pacman-key --populate archlinux blackarch
+  changed_when: false

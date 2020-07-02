@@ -1,0 +1,20 @@
+---
+empire_apt_dependencies:
+  - build-essential
+  - default-jdk
+  - g++
+  - git
+  - libssl1.0.2
+  - libssl1.0-dev
+  - libxml2-dev
+  - make
+  - python-dev
+  - python-m2crypto
+  - python-pip
+  - swig
+  - zlib1g-dev
+
+empire_repo_url: "https://github.com/EmpireProject/Empire.git"
+empire_repo_version: master
+
+empire_xar_version: "1.5.2"

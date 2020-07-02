@@ -5,7 +5,6 @@ mokapot_debian_reqs:
   - recon-ng
   - hping3
   - hashcat
-  - nikto
   - nmap
   - traceroute
   - mtr
@@ -83,26 +82,36 @@ mokapot_redhat_reqs:
   - mtr
   - tcpdump
   - ssdeep
-  - aircrack-ng
-  - kismet
-  - dirb
-  - hydra
-  - sec
-  - xxd # hexdump, dd
-  - gddrescue #ddrescue
-  - wireshark
-  - scapy
-  - sleuthkit
-  - autopsy
-  # - ntop
-  - netsniff-ng
-wireshark_source_debian_reqs:   # build from source wireshark requirements
-  - cmake
-  - libglib2.0-dev
-  - libgcrypt20-dev
-  - flex
-  - bison
-  - gettext
-  - libssh-dev
-  - libpcap0.8-dev
-  - qtbase5-dev
+mokapot_arclinux_reqs:
+      - netctl
+      - openvpn
+      - wpa_supplicant
+      - aria2
+      - curl
+      - htop
+      - httpie
+      - iotop
+      - jq
+      - less
+      - nmap
+      - openssh
+      - ripgrep
+      - rsync
+      - shellcheck
+      - usbutils
+      - which
+      - chromium
+      - evince
+      - mpv
+      - pcmanfm
+      - viewnior
+      # - wapiti
+      # - recon-ng
+      # - hping3
+      # - hashcat
+      # - nikto
+      # - nmap
+      # - traceroute
+      # - mtr
+      # - tcpdump
+      # - ssdeep

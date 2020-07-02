@@ -1,63 +1,65 @@
-# mokapot toolbox
+# moka-pot
 
+Travis (.com) dev branch:
+[![Build Status](https://travis-ci.com/githubfoam/moka-pot.svg?branch=ubuntu1904)](https://travis-ci.com/githubfoam/moka-pot)  
 
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-|  nipper              | Network Infrastructure Parser, Previously known as CiscoParser, network devices security auditing, Device security configuration review         | <https://github.com/arpitn30/nipper-ng>   |
-|  sec                 | 	Simple Event Correlator   |  <https://simple-evcorr.github.io/>  |
-
-
-| Tool                  | Function             | Link      |
-| --------------------- | ---------------------|----------:|
-|  tcpdump              | packet analyzer      | <https://www.tcpdump.org/>   |
-|  hping3               | TCP/IP packet assembler/analyzer  |    |
-| wireshark             | packet analyzer     |     |
-| scapy                 | packet manipulation tool, packet generator, network scanner, network discovery, packet sniffer  |     |
-| netsniff-ng             | network development and analysis, debugging, auditing or network reconnaissance     | <http://netsniff-ng.org/>    |
-
-
-| Tool                  | Function            | Link      |
-| --------------------- | ---------------------|----------:|
-| hashcat               | password recovery        | <https://github.com/hashcat/hashcat>   |
-| hydra                 | parallelized login cracker        |    |
-
-| Tool                 | Function             | Link      |
-| ---------------------| ---------------------|----------:|
-|  mtr                 | network diagnostic tool  |    |
-|  traceroute          | network diagnostic tool  |    |
-|  dig          | DNS lookup utility  |    |
-|  nc          | arbitrary TCP and UDP connections and listens  |    |
-|  nmap                | Security Scanner, Port Scanner, Network Exploration Too | <https://nmap.org/> |
-
-| Tool                  | Function             | Link      |
-| --------------------- | ---------------------|----------:|
-| nikto                 | web Vulnerability Scanner   |    |
-| recon-ng              | web Reconnaissance framework |    |
-| wapiti                | web application vulnerability scanner |    |
-| dirb                  | web Content Scanner |    |
-
-| Tool                  | Function            | Link      |
-| --------------------- | ---------------------|----------:|
-| ssdeep                | fuzzy hashing   | <https://ssdeep-project.github.io/ssdeep/index.html>    |
-
-| Tool                  | Function            | Link      |
-| ---------------------| ---------------------|----------:|
-| aircrack-ng          | Wireless Security Auditing   |     |
-| kismet               | layer-2 wireless network detector, sniffer, and intrusion detection system. |     |
-
-
-| Tool                  | Function            | Link      |
-| --------------------- | ---------------------|----------:|
-|  hexdump              | tool to make (or reverse) a hex dump  | xxd package  |
-|  dd                   | utility can copy and convert simple files, device drivers |    |
-|  ddrescue             | Data Recovery Tool |    |
-|  The Sleuth Kit       | a library and collection of command line tools that allow you to investigate disk images | <https://www.sleuthkit.org/sleuthkit/>  |
-|  Autopsy           | a graphical interface to the command line digital forensic analysis tools in The Sleuth Kit |  <https://www.sleuthkit.org/autopsy//>  |
+debian buster64
+~~~~
+socat
+net-tools
+wapiti
+recon-ng
+hping3
+hashcat https://github.com/hashcat/hashcat  
+nmap https://nmap.org
+traceroute
+mtr
+tcpdump https://www.tcpdump.org
+ssdeep https://ssdeep-project.github.io/ssdeep/index.html
+chromium
+burpsuite
+ghidra
+docker
+impacket https://github.com/SecureAuthCorp/impacket
+nullinux https://github.com/m8r0wn/nullinux
+nipper https://github.com/arpitn30/nipper-ng
+~~~~
+archlinux
+~~~~
+hcxdumptool https://github.com/ZerBea/hcxdumptool
+hcxtools https://github.com/ZerBea/hcxtools
+~~~~
+blackarchlinux
+~~~~
+hcxdumptool https://github.com/ZerBea/hcxdumptool
+hcxtools https://github.com/ZerBea/hcxtools
+~~~~
+~~~~
+parrot https://www.parrotsec.org/
+freebsd https://www.freebsd.org/
+openbsd https://www.openbsd.org/
+netbsd https://www.netbsd.org/
+~~~~
 
 ~~~~
-mokapot cheatsheet
-https://gist.github.com/githubfoam/4d3c99383b5372ee019c8fbc7581637d
+>vagrant up vg-mokapot-01
 
-linuz distro watch
-provisioning\servers_list.yml
+==> vg-mokapot-01: Running provisioner: ansible_local...
+    vg-mokapot-01: Installing Ansible...
+The requested Ansible version (2.9.1) was not found on the guest.
+Please check the Ansible installation on your Vagrant guest system (currently: 2.9.4),
+or adapt the provisioner `version` option in your Vagrantfile.
+See https://docs.vagrantup.com/v2/provisioning/ansible_common.html#version
+for more information.
+
+TASK [Gathering Facts] *********************************************************
+[DEPRECATION WARNING]: Distribution Ubuntu 19.04 on host vg-mokapot-01 should
+use /usr/bin/python3, but is using /usr/bin/python for backward compatibility
+with prior Ansible releases. A future Ansible release will default to using the
+ discovered platform python for this host. See https://docs.ansible.com/ansible
+/2.9/reference_appendices/interpreter_discovery.html for more information. This
+ feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+ok: [vg-mokapot-01]
+
 ~~~~

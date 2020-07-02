@@ -28,22 +28,27 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
               vb.memory = server["vbox_ram"]
               vb.cpus = server["vbox_cpu"]
               vb.gui = false
-              vb.customize ["modifyvm", :id, "--groups", "/zeek-sandbox"] # create vbox group
+              vb.customize ["modifyvm", :id, "--groups", "/mokapot-sandbox"] # create vbox group
           end # end of box.vm.providers
 
+          box.vm.provision "shell", path: server["shell_provision"]
+          # box.vm.provision :shell, path: "provisioning/bootstrap.sh"
+          # box.vm.provision "shell", inline: <<-SHELL
+          # echo "======================================================================================="
+          # hostnamectl status
+          # echo "======================================================================================="
+          # SHELL
+
           box.vm.provision "ansible_local" do |ansible|
+          # box.vm.provision :ansible do |ansible|
               # ansible.compatibility_mode = "2.0"
               ansible.compatibility_mode = server["ansible_compatibility_mode"]
-              ansible.version = server["ansible_version"]
+              # ansible.version = server["ansible_version"] # automation purposes
               ansible.playbook = server["server_bootstrap"]
               # ansible.inventory_path = 'provisioning/hosts'
               # ansible.verbose = "vvvv" # debug
            end # end if box.vm.provision
-          box.vm.provision "shell", inline: <<-SHELL
-          echo "======================================================================================="
-          hostnamectl status
-          echo "======================================================================================="
-          SHELL
+
 
         end # end of config.vm
       end  # end of servers_list.each loop

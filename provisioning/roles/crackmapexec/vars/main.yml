@@ -1,0 +1,12 @@
+---
+cme_packages:
+  - build-essential
+  - git
+  - libssl-dev
+  - libffi-dev
+  - python3-apt
+  - python3-dev
+  - python3-pip
+
+cme_repo_url: "https://github.com/byt3bl33d3r/CrackMapExec.git"
+cme_repo_version: master

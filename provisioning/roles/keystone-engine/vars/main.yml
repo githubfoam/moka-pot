@@ -1,0 +1,7 @@
+---
+keystone_dep_packages:
+  - build-essential
+  - cmake
+  - git
+  - python3
+  - python3-distutils

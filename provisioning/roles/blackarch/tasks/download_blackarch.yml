@@ -1,0 +1,26 @@
+---
+- name: Fetch keyring and signature
+  get_url:
+    url: "{{ keyring_url }}/{{ item }}"
+    dest: "/tmp/{{ item }}"
+  loop:
+    - "{{ keyring_filename }}"
+    - "{{ keyring_filename }}.sig"
+
+- name: Check if Evan Teitelman's public key is in local keyring
+  command: gpg --list-keys "{{ evan_pubkey }}"
+  register: evan_pubkey_present
+  changed_when: false
+  failed_when: false
+
+- name: Download Evan Teitelman's public key
+  command: gpg --keyserver "{{ keyserver }}" --recv-keys "{{ evan_pubkey }}"
+  when: evan_pubkey_present.rc != 0
+  register: res
+  changed_when: "'imported: 1' in res.stderr"
+
+- name: Verify Evan Teitelman's keyring signature
+  command: gpg --keyserver-options no-auto-key-retrieve --with-fingerprint "{{ keyring_filename }}.sig"
+  args:
+    chdir: /tmp
+  changed_when: false

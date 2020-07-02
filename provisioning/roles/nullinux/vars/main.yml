@@ -1,0 +1,8 @@
+---
+
+null_packages:
+  - git
+  - smbclient
+  - python3
+
+null_repo_url: https://github.com/m8r0wn/nullinux.git
