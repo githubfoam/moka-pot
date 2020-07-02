@@ -12,86 +12,86 @@
   roles:
     - common
 
-- name: "Build blackarch"
-  gather_facts: true
-  hosts:  vg-mokapot-02
-  become: yes
-  roles:
-    - blackarch1
+# - name: "Build blackarch"
+#   gather_facts: true
+#   hosts:  vg-mokapot-02
+#   become: yes
+#   roles:
+#     - blackarch1
 
-- name: "Build blackarch"
-  gather_facts: true
-  hosts:  vg-mokapot-02
-  vars:
-      ansible_arch_blackarch:
-        # Temporary installation files go here: /tmp/{{ prefix }}/...
-        tmp: "BlackArch-1337"
-        # The BlackArch mirror list to use
-        mirror: "blackarch-mirrorlist"
-        # Settings for the BlackArch keyring, signature, etc.
-        keyring:
-          url: "https://www.blackarch.org/keyring/blackarch-keyring.pkg.tar.xz"
-          sig: "https://www.blackarch.org/keyring/blackarch-keyring.pkg.tar.xz.sig"
-          key:
-            id: "4345771566D76038C7FEB43863EC0ADBEA87E4E3"
-            owner: "Evan Teitelman <teitelmanevan@gmail.com>"
-        # The BlackArch categories to install, also see 'sudo pacman -Sg | grep blackarch'
-        categories:
-          - "blackarch"
-          #- "blackarch-webapp"
-          #- "blackarch-fuzzer"
-          #- "blackarch-scanner"
-          #- "blackarch-proxy"
-          #- "blackarch-windows"
-          #- "blackarch-dos"
-          #- "blackarch-disassembler"
-          #- "blackarch-cracker"
-          #- "blackarch-voip"
-          #- "blackarch-recon"
-          #- "blackarch-spoof"
-          #- "blackarch-forensic"
-          #- "blackarch-crypto"
-          #- "blackarch-backdoor"
-          #- "blackarch-binary"
-          #- "blackarch-networking"
-          #- "blackarch-misc"
-          #- "blackarch-exploitation"
-          #- "blackarch-defensive"
-          #- "blackarch-wireless"
-          #- "blackarch-automation"
-          #- "blackarch-packer"
-          #- "blackarch-mobile"
-          #- "blackarch-malware"
-          #- "blackarch-reversing"
-          #- "blackarch-sniffer"
-          #- "blackarch-code-audit"
-          #- "blackarch-social"
-          #- "blackarch-honeypot"
-          #- "blackarch-hardware"
-          #- "blackarch-fingerprint"
-          #- "blackarch-debugger"
-          #- "blackarch-firmware"
-          #- "blackarch-config"
-          #- "blackarch-bluetooth"
-          #- "blackarch-database"
-          #- "blackarch-cryptography"
-          #- "blackarch-scan"
-          #- "blackarch-automobile"
-          #- "blackarch-decompiler"
-          #- "blackarch-nfc"
-          #- "blackarch-tunnel"
-          #- "blackarch-drone"
-          #- "blackarch-radio"
-          #- "blackarch-keylogger"
-          #- "blackarch-stego"
-          #- "blackarch-unpacker"
-          #- "blackarch-anti-forensic"
-          #- "blackarch-ids"
-          #- "blackarch-spoff"
-          #- "blackarch-gpu"
-  become: yes
-  roles:
-    - blackarch
+# - name: "Build blackarch"
+#   gather_facts: true
+#   hosts:  vg-mokapot-02
+#   vars:
+#       ansible_arch_blackarch:
+#         # Temporary installation files go here: /tmp/{{ prefix }}/...
+#         tmp: "BlackArch-1337"
+#         # The BlackArch mirror list to use
+#         mirror: "blackarch-mirrorlist"
+#         # Settings for the BlackArch keyring, signature, etc.
+#         keyring:
+#           url: "https://www.blackarch.org/keyring/blackarch-keyring.pkg.tar.xz"
+#           sig: "https://www.blackarch.org/keyring/blackarch-keyring.pkg.tar.xz.sig"
+#           key:
+#             id: "4345771566D76038C7FEB43863EC0ADBEA87E4E3"
+#             owner: "Evan Teitelman <teitelmanevan@gmail.com>"
+#         # The BlackArch categories to install, also see 'sudo pacman -Sg | grep blackarch'
+#         categories:
+#           - "blackarch"
+#           #- "blackarch-webapp"
+#           #- "blackarch-fuzzer"
+#           #- "blackarch-scanner"
+#           #- "blackarch-proxy"
+#           #- "blackarch-windows"
+#           #- "blackarch-dos"
+#           #- "blackarch-disassembler"
+#           #- "blackarch-cracker"
+#           #- "blackarch-voip"
+#           #- "blackarch-recon"
+#           #- "blackarch-spoof"
+#           #- "blackarch-forensic"
+#           #- "blackarch-crypto"
+#           #- "blackarch-backdoor"
+#           #- "blackarch-binary"
+#           #- "blackarch-networking"
+#           #- "blackarch-misc"
+#           #- "blackarch-exploitation"
+#           #- "blackarch-defensive"
+#           #- "blackarch-wireless"
+#           #- "blackarch-automation"
+#           #- "blackarch-packer"
+#           #- "blackarch-mobile"
+#           #- "blackarch-malware"
+#           #- "blackarch-reversing"
+#           #- "blackarch-sniffer"
+#           #- "blackarch-code-audit"
+#           #- "blackarch-social"
+#           #- "blackarch-honeypot"
+#           #- "blackarch-hardware"
+#           #- "blackarch-fingerprint"
+#           #- "blackarch-debugger"
+#           #- "blackarch-firmware"
+#           #- "blackarch-config"
+#           #- "blackarch-bluetooth"
+#           #- "blackarch-database"
+#           #- "blackarch-cryptography"
+#           #- "blackarch-scan"
+#           #- "blackarch-automobile"
+#           #- "blackarch-decompiler"
+#           #- "blackarch-nfc"
+#           #- "blackarch-tunnel"
+#           #- "blackarch-drone"
+#           #- "blackarch-radio"
+#           #- "blackarch-keylogger"
+#           #- "blackarch-stego"
+#           #- "blackarch-unpacker"
+#           #- "blackarch-anti-forensic"
+#           #- "blackarch-ids"
+#           #- "blackarch-spoff"
+#           #- "blackarch-gpu"
+#   become: yes
+#   roles:
+#     - blackarch
 
 # - name: "Build Debian GNU/Linux 10 (buster) mokapot"
 #   gather_facts: true
