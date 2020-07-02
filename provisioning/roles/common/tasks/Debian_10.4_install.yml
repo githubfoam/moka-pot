@@ -9,8 +9,7 @@
 
 - name: "Install system packages w apt - git problem"
   apt:
-    name: '{{ system_packages }}'
-    use: '{{ ansible_pkg_mgr }}'
+    name: git
     state: present
 
 - name: "Install system packages w dpkg- git problem"
