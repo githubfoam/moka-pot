@@ -15,6 +15,7 @@ set -o xtrace
   echo "                 ||     ||                                                         "
   echo "======================update pacman mirrorlist=============================================================="
 
+  pacman -S --noconfirm wget #Install a package
   country=DE
 
   url="https://www.archlinux.org/mirrorlist/?country=${country}&protocol=http&ip_version=4&use_mirror_status=on"
