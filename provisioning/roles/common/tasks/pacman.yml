@@ -27,3 +27,27 @@
   pacman:
     upgrade: true
     update_cache: true
+
+- name: Install filesystem tools
+  pacman:
+    name:
+      - cryptsetup
+      - e2fsprogs
+
+- name: Install python development tools
+  pacman:
+    name:
+      - python
+      - python-pip
+      - python-virtualenv
+
+- name: Install golang
+  pacman:
+    name: go
+
+- name: Install C/C++ development tools
+  pacman:
+    name:
+      - base-devel
+      - gdb
+      - valgrind    
