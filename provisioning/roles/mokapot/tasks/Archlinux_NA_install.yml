@@ -13,29 +13,29 @@
     use: '{{ ansible_pkg_mgr }}'
     state: present
 
-- name: Install filesystem tools
-  pacman:
-    name:
-      - cryptsetup
-      - e2fsprogs
-
-- name: Install python development tools
-  pacman:
-    name:
-      - python
-      - python-pip
-      - python-virtualenv
-
-- name: Install golang
-  pacman:
-    name: go
-
-- name: Install C/C++ development tools
-  pacman:
-    name:
-      - base-devel
-      - gdb
-      - valgrind
+# - name: Install filesystem tools
+#   pacman:
+#     name:
+#       - cryptsetup
+#       - e2fsprogs
+#
+# - name: Install python development tools
+#   pacman:
+#     name:
+#       - python
+#       - python-pip
+#       - python-virtualenv
+#
+# - name: Install golang
+#   pacman:
+#     name: go
+#
+# - name: Install C/C++ development tools
+#   pacman:
+#     name:
+#       - base-devel
+#       - gdb
+#       - valgrind
 
 - name: "mokapot requirements"
   package:
