@@ -14,8 +14,8 @@
     name: reflector
   #become: true
 
-- name: update pacman mirrorlist
-  script: update-mirrorlist.sh
+# - name: update pacman mirrorlist
+#   script: update-mirrorlist.sh
   #become: true
 
 - name: Install base metapackage
