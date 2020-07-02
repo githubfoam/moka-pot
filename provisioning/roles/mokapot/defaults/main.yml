@@ -15,21 +15,22 @@ mokapot_debian_reqs:
   - mtr #network diagnostic tool
   - net-tools
 ######################
-  # - ncat #- NMAP netcat reimplementation
-  # - p0f #- Passive OS fingerprinting tool
-  # - pnscan #- Multi threaded port scanner
-  # - masscan #- TCP port scanner
-  # - ncrack #- High-speed network authentication cracking tool
-  # - ndiff #- The Network Mapper - result compare utility
-  # - netsniff-ng #- Linux network packet sniffer toolkit
-  # - dnsdiag #- DNS request auditing toolset
-  # - argus-server #- IP network transaction auditing tool
-  # - argus-client #- IP network transaction auditing tool
-  # - dhcpdump #- Parse DHCP packets from tcpdump
-  # - mitmproxy #- SSL-capable man-in-the-middle HTTP proxy
-  # - namebench #- DNS benchmark utility
-  # - ncaptool #- network capture tool
-  # - ngrep #- grep for network traffic
+  - ncat #- NMAP netcat reimplementation
+  - p0f #- Passive OS fingerprinting tool
+  - pnscan #- Multi threaded port scanner
+  - masscan #- TCP port scanner
+  - ncrack #- High-speed network authentication cracking tool
+  - ndiff #- The Network Mapper - result compare utility
+  - netsniff-ng #- Linux network packet sniffer toolkit
+  - dnsdiag #- DNS request auditing toolset
+  - argus-server #- IP network transaction auditing tool
+  - argus-client #- IP network transaction auditing tool
+  - dhcpdump #- Parse DHCP packets from tcpdump
+  - mitmproxy #- SSL-capable man-in-the-middle HTTP proxy
+  - namebench #- DNS benchmark utility
+  - ncaptool #- network capture tool
+  - ngrep #- grep for network traffic
+  
   # - nstreams #- network streams - a tcpdump output analyzer
   # - packit #- network packet generator and capture tool
   # - python-scapy #- Packet generator/sniffer and network scanner/discovery (Python 2)
