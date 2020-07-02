@@ -5,29 +5,82 @@ Travis (.com) dev branch:
 
 debian buster64
 ~~~~
-socat
-net-tools
-wapiti
-recon-ng
-hping3
-hashcat https://github.com/hashcat/hashcat  
-nmap https://nmap.org
-traceroute
-mtr
-tcpdump https://www.tcpdump.org
-ssdeep https://ssdeep-project.github.io/ssdeep/index.html
-chromium
-burpsuite
-ghidra
-docker
-impacket https://github.com/SecureAuthCorp/impacket
-nullinux https://github.com/m8r0wn/nullinux
-nipper https://github.com/arpitn30/nipper-ng
+- chromium
+- burpsuite
+- ghidra
+- impacket https://github.com/SecureAuthCorp/impacket
+- nullinux https://github.com/m8r0wn/nullinux
+- nipper https://github.com/arpitn30/nipper-ng
+- docker
+
+mokapot(baseline)
+- git
+- wapiti
+- recon-ng
+- hping3
+- hashcat https://github.com/hashcat/hashcat  
+- nmap https://nmap.org
+- traceroute
+- mtr
+- tcpdump
+- ssdeep https://ssdeep-project.github.io/ssdeep/index.html
+- aircrack-ng
+- kismet
+- dirb
+- hydra
+- sec
+- xxd # hexdump, dd
+- gddrescue #ddrescue
+- wireshark
+- scapy
+- sleuthkit
+- autopsy
+- netsniff-ng
+
+- socat
+- traceroute
+- mtr
+- tcpdump https://www.tcpdump.org
+- net-tools
 ~~~~
 archlinux
 ~~~~
-hcxdumptool https://github.com/ZerBea/hcxdumptool
-hcxtools https://github.com/ZerBea/hcxtools
+- nipper
+- hcxdumptool https://github.com/ZerBea/hcxdumptool
+- hcxtools https://github.com/ZerBea/hcxtools
+
+mokapot(baseline)
+- hashcat
+- nikto
+- nmap
+- traceroute
+- mtr
+- tcpdump
+- ssdeep
+- socat
+- netctl
+- openvpn
+- wpa_supplicant
+- aria2
+- curl
+- htop
+- httpie
+- iotop
+- jq
+- less
+- nmap
+- openssh
+- ripgrep
+- rsync
+- shellcheck
+- usbutils
+- which
+- chromium
+- evince
+- mpv
+- pcmanfm
+- viewnior
+- valgrind
 ~~~~
 blackarchlinux
 ~~~~
