@@ -15,9 +15,7 @@ mokapot_debian_reqs:
   - mtr #network diagnostic tool
   - tcpdump
   - net-tools
-
-  - clamav
-  - nikto #web Vulnerability Scanner
+######################
   - sec #https://simple-evcorr.github.io/
   - wireshark #packet analyzer
   - scapy #packet manipulation tool, packet generator, network scanner, network discovery, packet sniffer
@@ -34,6 +32,8 @@ mokapot_debian_reqs:
   # - The Sleuth Kit a library and collection of command line tools that allow you to investigate disk images
   # - https://www.sleuthkit.org/sleuthkit/
   # - Autopsy 	a graphical interface to the command line digital forensic analysis tools in The Sleuth Kit 	https://www.sleuthkit.org/autopsy//
+  # - nikto #web Vulnerability Scanner
+  # - clamav #maldet blazescan https://github.com/Hestat/lw-yara https://github.com/Hestat/blazescan
 mokapot_redhat_reqs:
   - hping3
   - hashcat
@@ -44,28 +44,28 @@ mokapot_redhat_reqs:
   - tcpdump
   - ssdeep
 mokapot_arclinux_reqs:
-      - netctl
-      - openvpn
-      - wpa_supplicant
-      - aria2
-      - curl
-      - htop
-      - httpie
-      - iotop
-      - jq
-      - less
-      - nmap
-      - openssh
-      - ripgrep
-      - rsync
-      - shellcheck
-      - usbutils
-      - which
-      - chromium
-      - evince
-      - mpv
-      - pcmanfm
-      - viewnior
+  - netctl
+  - openvpn
+  - wpa_supplicant
+  - aria2
+  - curl
+  - htop
+  - httpie
+  - iotop
+  - jq
+  - less
+  - nmap
+  - openssh
+  - ripgrep
+  - rsync
+  - shellcheck
+  - usbutils
+  - which
+  - chromium
+  - evince
+  - mpv
+  - pcmanfm
+  - viewnior
       # - wapiti
       # - recon-ng
       # - hping3

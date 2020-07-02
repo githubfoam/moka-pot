@@ -31,6 +31,11 @@ vagrant box add "bento/debian-10.4" --provider=virtualbox
 vagrant mutate "bento/debian-10.4" libvirt
 vagrant up --provider=libvirt "vg-mokapot-05"
 
+vagrant ssh "vg-mokapot-05" -c "sudo blazescan -h"
+vagrant ssh "vg-mokapot-05" -c "sudo clamscan -ir -d /tmp/lw-yara/ /tmp/*"
+vagrant ssh "vg-mokapot-05" -c "sudo perl nikto.pl -h http://www.google.com"
+
+
 # https://app.vagrantup.com/archlinux
 # vagrant box add "archlinux/archlinux" --provider=libvirt
 # vagrant up --provider=libvirt "vg-mokapot-06"
