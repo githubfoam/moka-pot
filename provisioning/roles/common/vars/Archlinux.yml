@@ -1,5 +1,6 @@
 ---
 system_packages:
+  - git
   - socat
   - traceroute
   - mtr
