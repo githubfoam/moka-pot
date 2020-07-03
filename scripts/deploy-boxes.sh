@@ -31,6 +31,8 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 vagrant box add "archlinux/archlinux" --provider=libvirt
 vagrant up --provider=libvirt "vg-mokapot-02"
 
+vagrant up --provider=libvirt "vg-mokapot-03"
+
 # https://app.vagrantup.com/archlinux
 # vagrant box add "archlinux/archlinux" --provider=libvirt
 vagrant up --provider=libvirt "vg-mokapot-06"
