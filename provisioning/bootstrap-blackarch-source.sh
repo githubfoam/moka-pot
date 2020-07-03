@@ -31,11 +31,12 @@ chmod +x strap.sh
 
 # First, you must install blackman. If the BlackArch package repository is setup on your machine,
 # you can install blackman like:
-pacman -S blackman
+# pacman -S blackman #Proceed with installation? [Y/n]
+pacman -S --noconfirm blackman
 
 # Download, compile and install package:
 #https://www.blackarch.org/tools.html
-#blackman -i aircrack-ng
+blackman -i aircrack-ng
 
 # Download, compile and install whole category
 #blackman -g <group>
@@ -45,5 +46,7 @@ blackman -a
 
 # To list blackarch categories
 blackman -l
+
 # To list category tools
 #blackman -p <category>
+blackman -p blackarch-forensic

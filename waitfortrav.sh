@@ -8,4 +8,4 @@ set -o xtrace
 echo "========================================================================================="
 sudo make deploy-libvirt
 sudo make deploy-vagrant
-sudo make deploy-boxes
+sudo make build-ansible

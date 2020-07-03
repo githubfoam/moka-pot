@@ -44,7 +44,7 @@ pacman -Sg | grep blackarch
 
 # To install a category of tools, run
 # $ sudo pacman -S blackarch-<category>
-pacman -S blackarch-forensic
+#pacman -S blackarch-forensic #vg-mokapot-06: Enter a selection (default=all)
 
 
 

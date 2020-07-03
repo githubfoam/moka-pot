@@ -11,13 +11,13 @@
     shell: "hostnamectl set-hostname {{ inventory_hostname }}"
   roles:
     - common
+    # - blackarch1
 
 - name: "Build blackarch1"
   gather_facts: true
   hosts:  vg-mokapot-02
   become: yes
   roles:
-    # - common
     - blackarch1
 
 # - name: "Build blackarch"
