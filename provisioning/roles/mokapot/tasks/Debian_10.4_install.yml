@@ -32,7 +32,8 @@
     update: no
 - name: "Install (clamav - maldet - blazescan)"
   #shell: install.sh chdir=/tmp/mokapot/blazescan >> /tmp/blazescan_make.out
-  shell: install.sh >> /tmp/blazescan_make.out
+  #shell: install.sh >> /tmp/blazescan_make.out
+  shell: pwd && ls -lai
   args:
     chdir: /tmp/mokapot/blazescan
     creates: blazescan_make.out
@@ -44,14 +45,14 @@
     update: no
 
 #https://github.com/sullo/nikto
-- name: "git checkout nikto"
-  git:
-    repo: 'https://github.com/sullo/nikto'
-    dest: /tmp/mokapot/nikto
-    clone: yes
-    update: no
-- name: "Install (clamav - maldet - blazescan)"
-  shell: ./nikto.pl chdir=/tmp/mokapot/nikto/program >> /tmp/nikto.pl.out
-  args:
-    chdir: /tmp
-    creates: nikto.pl.out
+# - name: "git checkout nikto"
+#   git:
+#     repo: 'https://github.com/sullo/nikto'
+#     dest: /tmp/mokapot/nikto
+#     clone: yes
+#     update: no
+# - name: "Install (clamav - maldet - blazescan)"
+#   shell: ./nikto.pl chdir=/tmp/mokapot/nikto/program >> /tmp/nikto.pl.out
+#   args:
+#     chdir: /tmp
+#     creates: nikto.pl.out
