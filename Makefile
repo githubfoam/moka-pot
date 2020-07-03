@@ -1,6 +1,12 @@
 IMAGE := alpine/fio
 APP:="scripts/usernetes-containerd.sh"
 
+build-source:
+	bash scripts/build-source.sh
+build-blackarch:
+	bash scripts/build-blackarch.sh
+build-ansible:
+	bash scripts/build-ansible.sh
 deploy-boxes:
 	bash scripts/deploy-boxes.sh
 deploy-libvirt:
