@@ -67,3 +67,6 @@
     - hcxdumptool
     - hcxtools
     - mokapot
+    - hashicorp
+    - virtualbox
+    - nettools
