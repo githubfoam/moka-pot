@@ -3,7 +3,7 @@
 Travis (.com) dev branch:
 [![Build Status](https://travis-ci.com/githubfoam/moka-pot.svg?branch=master)](https://travis-ci.com/githubfoam/moka-pot)  
 
-debian buster64
+debian buster64 branch
 ~~~~
 - chromium
 - burpsuite
@@ -43,7 +43,7 @@ mokapot(baseline)
 - tcpdump https://www.tcpdump.org
 - net-tools
 ~~~~
-archlinux
+archlinux branch
 ~~~~
 - nipper
 - hcxdumptool https://github.com/ZerBea/hcxdumptool
@@ -82,7 +82,7 @@ mokapot(baseline)
 - viewnior
 - valgrind
 ~~~~
-blackarchlinux
+blackarchlinux branch
 ~~~~
 hcxdumptool https://github.com/ZerBea/hcxdumptool
 hcxtools https://github.com/ZerBea/hcxtools
