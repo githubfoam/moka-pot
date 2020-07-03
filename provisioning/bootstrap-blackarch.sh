@@ -33,12 +33,16 @@ chmod +x strap.sh
 # To list all of the available tools, run
 pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
 # To install all of the tools, run
-pacman -S blackarch
+# pacman -S blackarch
+
+# To see the blackarch categories, run
+# $ sudo pacman -Sg | grep blackarch
+pacman -Sg | grep blackarch
 
 # To install a category of tools, run
 # $ sudo pacman -S blackarch-<category>
-# To see the blackarch categories, run
-# $ sudo pacman -Sg | grep blackarch
+pacman -S blackarch-forensic
+
 # Note - it maybe be necessary to overwrite certain packages when installing blackarch tools. If
 # you experience "failed to commit transaction" errors, use the --needed and --overwrite switches
 # For example:
