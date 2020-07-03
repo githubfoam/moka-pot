@@ -36,8 +36,6 @@ mokapot_debian_reqs:
   - python-scapy #- Packet generator/sniffer and network scanner/discovery (Python 2)
   - python3-scapy #- Packet generator/sniffer and network scanner/discovery (Python 3)
   - ssldump #- SSLv3/TLS network protocol analyzer
-  - tcpflow #- TCP flow recorder
-  - tcpflow-nox #- TCP flow recorder - version without X11 dependencies
   - tcpreplay #- Tool to replay saved tcpdump files at arbitrary speeds
   - tcpslice #- extract pieces of and/or glue together tcpdump files
   - tcpspy #- Incoming and Outgoing TCP/IP connections logger
@@ -48,6 +46,10 @@ mokapot_debian_reqs:
   - pcapfix #- repairs broken pcap and pcapng files
   - nsntrace #- perform network trace of a single process by using network namespaces
   - ostinato #- Packet/Traffic Generator and Analyzer
+
+# - tcpflow #- TCP flow recorder
+# - tcpflow-nox #- TCP flow recorder - version without X11 dependencies
+# "The following packages have unmet dependencies:", " tcpflow : Conflicts: tcpflow-nox but 1.5.2+repack1-1 is to be installed", " tcpflow-nox : Conflicts: tcpflow"]
   ######################
   - brutespray #- Python bruteforce tool
   - sec #Simple Event Correlator https://simple-evcorr.github.io/
