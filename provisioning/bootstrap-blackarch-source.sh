@@ -15,6 +15,7 @@ set -o xtrace
   echo "                 ||     ||                                                         "
   echo "===================================================================================="
 
+
 #https://www.blackarch.org/downloads.html#install-repo
 
 # Run https://blackarch.org/strap.sh as root and follow the instructions.
@@ -33,6 +34,10 @@ chmod +x strap.sh
 # you can install blackman like:
 # pacman -S blackman #Proceed with installation? [Y/n]
 pacman -S --noconfirm blackman
+
+#blackman -i aircrack-ng FIXES
+pacman -S --noconfirm  base-devel #ERROR: Blackman needs base-devel to work
+pacman -S --noconfirm  binutils  #ERROR: Blackman needs binutils to work
 
 # Download, compile and install package:
 #https://www.blackarch.org/tools.html

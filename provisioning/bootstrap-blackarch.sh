@@ -34,18 +34,18 @@ chmod +x strap.sh
 
 #install tools from the blackarch repository
 # To list all of the available tools, run
-pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+# pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
 # To install all of the tools, run
 # pacman -S blackarch
 
 # To see the blackarch categories, run
 # $ sudo pacman -Sg | grep blackarch
-pacman -Sg | grep blackarch
+# pacman -Sg | grep blackarch
 
 # To install a category of tools, run
 # $ sudo pacman -S blackarch-<category>
 #pacman -S blackarch-forensic #vg-mokapot-06: Enter a selection (default=all)
-
+pacman -S --noconfirm blackarch-forensic
 
 
 # Note - it maybe be necessary to overwrite certain packages when installing blackarch tools. If
