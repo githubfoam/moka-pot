@@ -31,7 +31,7 @@ vagrant up --provider=libvirt "vg-mokapot-02"
 # vagrant mutate "bento/debian-10.4" libvirt
 # vagrant up --provider=libvirt "vg-mokapot-05"
 
-https://app.vagrantup.com/archlinux
+# https://app.vagrantup.com/archlinux
 vagrant box add "archlinux/archlinux" --provider=libvirt
 vagrant up --provider=libvirt "vg-mokapot-06"
 
