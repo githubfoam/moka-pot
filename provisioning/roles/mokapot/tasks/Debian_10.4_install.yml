@@ -10,7 +10,7 @@
 
 - name: "Install system packages w apt - git problem"
   apt:
-    name: git 
+    name: git
     state: present
 
 - name: "Install system packages w dpkg- git problem"
@@ -31,9 +31,10 @@
     clone: yes
     update: no
 - name: "Install (clamav - maldet - blazescan)"
-  shell: install.sh chdir=/tmp/mokapot/blazescan >> /tmp/blazescan_make.out
+  #shell: install.sh chdir=/tmp/mokapot/blazescan >> /tmp/blazescan_make.out
+  shell: install.sh >> /tmp/blazescan_make.out
   args:
-    chdir: /tmp
+    chdir: /tmp/mokapot/blazescan
     creates: blazescan_make.out
 - name: "git checkout maldet (clamav - maldet - blazescan)"
   git:

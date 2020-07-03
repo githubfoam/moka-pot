@@ -30,24 +30,24 @@ mokapot_debian_reqs:
   - namebench #- DNS benchmark utility
   - ncaptool #- network capture tool
   - ngrep #- grep for network traffic
-  
-  # - nstreams #- network streams - a tcpdump output analyzer
-  # - packit #- network packet generator and capture tool
-  # - python-scapy #- Packet generator/sniffer and network scanner/discovery (Python 2)
-  # - python3-scapy #- Packet generator/sniffer and network scanner/discovery (Python 3)
-  # - ssldump #- SSLv3/TLS network protocol analyzer
-  # - tcpflow #- TCP flow recorder
-  # - tcpflow-nox #- TCP flow recorder - version without X11 dependencies
-  # - tcpreplay #- Tool to replay saved tcpdump files at arbitrary speeds
-  # - tcpslice #- extract pieces of and/or glue together tcpdump files
-  # - tcpspy #- Incoming and Outgoing TCP/IP connections logger
-  # - tcpstat #- network interface statistics reporting tool
-  # - tcptrace #- Tool for analyzing tcpdump output
-  # - tcpick #- TCP stream sniffer and connection tracker
-  # - tcpxtract #- extract files from network traffic based on file signatures
-  # - pcapfix #- repairs broken pcap and pcapng files
-  # - nsntrace #- perform network trace of a single process by using network namespaces
-  # - ostinato #- Packet/Traffic Generator and Analyzer
+
+  - nstreams #- network streams - a tcpdump output analyzer
+  - packit #- network packet generator and capture tool
+  - python-scapy #- Packet generator/sniffer and network scanner/discovery (Python 2)
+  - python3-scapy #- Packet generator/sniffer and network scanner/discovery (Python 3)
+  - ssldump #- SSLv3/TLS network protocol analyzer
+  - tcpflow #- TCP flow recorder
+  - tcpflow-nox #- TCP flow recorder - version without X11 dependencies
+  - tcpreplay #- Tool to replay saved tcpdump files at arbitrary speeds
+  - tcpslice #- extract pieces of and/or glue together tcpdump files
+  - tcpspy #- Incoming and Outgoing TCP/IP connections logger
+  - tcpstat #- network interface statistics reporting tool
+  - tcptrace #- Tool for analyzing tcpdump output
+  - tcpick #- TCP stream sniffer and connection tracker
+  - tcpxtract #- extract files from network traffic based on file signatures
+  - pcapfix #- repairs broken pcap and pcapng files
+  - nsntrace #- perform network trace of a single process by using network namespaces
+  - ostinato #- Packet/Traffic Generator and Analyzer
   ######################
   - brutespray #- Python bruteforce tool
   - sec #Simple Event Correlator https://simple-evcorr.github.io/
