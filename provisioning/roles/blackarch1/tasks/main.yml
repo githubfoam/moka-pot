@@ -8,16 +8,16 @@
     - " ansible_distribution_release: {{ hostvars[inventory_hostname].ansible_distribution_release }}"
     - " ansible_distribution_version: {{ hostvars[inventory_hostname].ansible_distribution_version }}"
 
-- name: Check if blackarch repository is present
-  command: pacman -Sl blackarch
-  register: blackarch_present
-  changed_when: false
-  failed_when: false
-
-- name: Download and install blackarch keyring
-  block:
-    - include_tasks: update_archlinux.yml
-    - include_tasks: download_blackarch.yml
-    - include_tasks: install_blackarch.yml
-    - include_tasks: configure_blackarch.yml
-  when: blackarch_present.rc != 0
+# - name: Check if blackarch repository is present
+#   command: pacman -Sl blackarch
+#   register: blackarch_present
+#   changed_when: false
+#   failed_when: false
+#
+# - name: Download and install blackarch keyring
+#   block:
+#     - include_tasks: update_archlinux.yml
+#     - include_tasks: download_blackarch.yml
+#     - include_tasks: install_blackarch.yml
+#     - include_tasks: configure_blackarch.yml
+#   when: blackarch_present.rc != 0
