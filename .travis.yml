@@ -37,7 +37,7 @@ matrix:
       script:
           - sudo make deploy-libvirt
           - sudo make deploy-vagrant
-          - sudo make build-arch
+          - sudo make build-blackarch
           # - travis_wait 20 waitfortrav.sh
       after_success:
         - deactivate
