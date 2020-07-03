@@ -24,25 +24,26 @@
     name: "{{ mokapot_debian_reqs }}"
     state: present
 
-- name: "git checkout blazescan (clamav - maldet - blazescan)"
-  git:
-    repo: 'https://github.com/Hestat/blazescan.git'
-    dest: /tmp/mokapot/blazescan
-    clone: yes
-    update: no
-- name: "Install (clamav - maldet - blazescan)"
-  #shell: install.sh chdir=/tmp/mokapot/blazescan >> /tmp/blazescan_make.out
-  #shell: install.sh >> /tmp/blazescan_make.out
-  shell: pwd && ls -lai
-  args:
-    chdir: /tmp/mokapot/blazescan
-    creates: blazescan_make.out
-- name: "git checkout maldet (clamav - maldet - blazescan)"
-  git:
-    repo: 'https://github.com/Hestat/lw-yara.git'
-    dest: /tmp/mokapot/blazescan
-    clone: yes
-    update: no
+# - name: "git checkout blazescan (clamav - maldet - blazescan)"
+#   git:
+#     repo: 'https://github.com/Hestat/blazescan.git'
+#     dest: /tmp/mokapot/blazescan
+#     clone: yes
+#     update: no
+# - name: "Install (clamav - maldet - blazescan)"
+#   #shell: install.sh chdir=/tmp/mokapot/blazescan >> /tmp/blazescan_make.out
+#   #shell: install.sh >> /tmp/blazescan_make.out
+#   shell: pwd && ls -lai
+#   args:
+#     chdir: /tmp/mokapot/blazescan
+#     creates: blazescan_make.out
+
+# - name: "git checkout maldet (clamav - maldet - blazescan)"
+#   git:
+#     repo: 'https://github.com/Hestat/lw-yara.git'
+#     dest: /tmp/mokapot/blazescan
+#     clone: yes
+#     update: no
 
 #https://github.com/sullo/nikto
 # - name: "git checkout nikto"
