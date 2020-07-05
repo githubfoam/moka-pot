@@ -28,5 +28,5 @@
 - name: "move to the Maldet directory"
   shell: ls -lai && cd /tmp/maldetect*
 
-- name: "Extract the latest version of Suricata into /tmp"
-  shell: install sh
+- name: "Install maldet"
+  shell: install.sh
