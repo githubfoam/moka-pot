@@ -50,4 +50,29 @@
     name:
       - base-devel
       - gdb
-      - valgrind    
+      - valgrind
+
+- name: Install docker and pip for ansible management
+  pacman: name={{item}}
+  with_items:
+       - docker
+       - docker-compose
+       - python2-pip
+       - python2
+  service:
+    name: docker
+    enabled: yes
+
+# - name: Install pip packages for ansible
+#   pip: name= "{{ item }}" executable=/usr/bin/pip2
+#   become: true
+#   # pip: name={{ item }}
+#   with_items:
+#     - setuptools
+#     - docker-py
+#
+# - name: Install docker-gen
+#   unarchive:
+#     src: https://github.com/jwilder/docker-gen/releases/download/0.7.3/docker-gen-linux-amd64-0.7.3.tar.gz
+#     dest: /usr/local/bin/
+#     remote_src: True
