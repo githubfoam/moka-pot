@@ -24,16 +24,18 @@
   hosts:  vg-mokapot-05
   become: yes
   roles:
-    - chromium
-    - impacket
-    - nullinux
-    - nipper
-    - role: burpsuite
-      burpsuite_user: vagrant
-    - docker
-    - ghidra
+    # - chromium
+    # - impacket
+    # - nullinux
+    # - nipper
+    # - role: burpsuite
+    #   burpsuite_user: vagrant
+    # - docker
+    # - ghidra
+    # - mokapot
+#####################maldet testing##########################
+    - maldet
     # - role: vscode
-    - mokapot
     # - role: vscode-extensions #Extension 'ms-vscode.go' not found.
     #   vscode_extensions:
     #   - ms-python.python
