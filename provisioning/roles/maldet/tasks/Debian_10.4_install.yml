@@ -1,0 +1,42 @@
+---
+#https://docs.ansible.com/ansible/2.3/include_vars_module.html
+- name: "Load a variable file based on the OS type, or a default if not found"
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_os_family }}.yml"
+    - "{{ ansible_distribution }}_{{ ansible_distribution_version }}.yml"
+    - default.yml
+
+- name: "Install system packages w apt - git problem"
+  apt:
+    name: git
+    state: present
+
+- name: "Install system packages w dpkg- git problem"
+  package:
+    name: '{{ system_packages }}'
+    use: '{{ ansible_pkg_mgr }}'
+    state: present
+
+- name: "Create /tmp/mokapot basedirectory if it does not exist"
+  file:
+    path: /tmp/mokapot
+    state: directory
+    mode: '0755'
+    
+- name: "Extract the latest version of maldet into /tmp"
+  unarchive:
+    src: https://www.rfxn.com/downloads/maldetect-current.tar.gz
+    dest: /tmp/mokapot
+    remote_src: yes
+
+- name: "Move to the Maldet directory and install maldet"
+  shell: "cd /tmp/mokapot/maldetect* && sudo bash install.sh && sudo ln -s /usr/local/maldetect/maldet /usr/local/bin/maldet"
+
+- name: "Create maldet symbolic link"
+  file:
+    src: /usr/local/maldetect/maldet
+    dest: /usr/local/bin/maldet
+    # owner: foo
+    # group: foo
+    state: link

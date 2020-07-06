@@ -19,11 +19,49 @@
   roles:
     - mokapot #baseline
     - chromium
-    - role: burpsuite
-      burpsuite_user: vagrant
-    - ghidra
-    - role: vscode
-    - docker
     - impacket
     - nullinux
     - nipper
+    - role: burpsuite
+      burpsuite_user: vagrant
+    - docker
+    - ghidra
+    - maldet
+    - mokapot
+#####################testing##########################
+    # - role: vscode
+    # - role: vscode-extensions #Extension 'ms-vscode.go' not found.
+    #   vscode_extensions:
+    #   - ms-python.python
+    #   - ms-vscode.go
+    # - bettercap #"No package matching 'bettercap' is available"
+    # - empire #"No package matching 'libssl1.0.2' is available"
+    # - hcxtools #"No package matching 'wireguard' is available"
+    # - hcxdumptool #openssl/evp.h: No such file or directory", " #include <openssl/evp.h>"
+    # - wireguard #No package matching 'wireguard' is available
+    #- powershell #Depends: libssl1.0.2 but it is not installable\n
+    # - role: johntheripper # cannot remove '/usr/local/src/JohnTheRipper/run/*.dSYM': No such file or directory",
+    #   jtr_local_src_dir: /usr/local/src
+    #   jtr_openmpi_support_enabled: true
+    #   jtr_rexgen_support_enabled: false
+
+
+
+
+# - name: "Build Ubuntu 19.10 (Eon) mokapot"
+#   gather_facts: true
+#   hosts:  vg-mokapot-01
+#   become: yes
+#   roles:
+#     #- chromium #"No package matching 'chromium' is available"
+#     - burpsuite
+
+# - name: "Build Archlinux mokapot"
+#   gather_facts: true
+#   hosts:  vg-mokapot-06
+#   become: yes
+#   roles:
+#     - tor
+#     - hcxtools
+#     # - mokapot
+#     - nipper
