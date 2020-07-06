@@ -25,26 +25,13 @@
     dest: /tmp/mokapot
     remote_src: yes
 
-- name: "move to the Maldet directory and install maldet"
+- name: "Move to the Maldet directory and install maldet"
   shell: "cd /tmp/mokapot/maldetect* && sudo bash install.sh && sudo ln -s /usr/local/maldetect/maldet /usr/local/bin/maldet"
 
-
-# https://www.sans.org/free tools
-- name: "git checkout quantumduck"
-  git:
-    repo: 'https://github.com/dagonis/QuantumDuck.git'
-    dest: /tmp/mokapot/quantumduck
-    clone: yes
-    update: no
-- name: "git checkout obscureV4"
-  git:
-    repo: 'https://github.com/dagonis/obscureV4.git'
-    dest: /tmp/mokapot/obscureV4
-    clone: yes
-    update: no
-- name: "git checkout pktIntel"
-  git:
-    repo: 'https://github.com/SecurityNik/pktIntel.git'
-    dest: /tmp/mokapot/pktIntel
-    clone: yes
-    update: no
+- name: "Create maldet symbolic link"
+  file:
+    src: /usr/local/maldetect/maldet
+    dest: /usr/local/bin/maldet
+    # owner: foo
+    # group: foo
+    state: link

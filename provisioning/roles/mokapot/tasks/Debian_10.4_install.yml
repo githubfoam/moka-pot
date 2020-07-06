@@ -24,12 +24,40 @@
     name: "{{ mokapot_debian_reqs }}"
     state: present
 
-# - name: "git checkout blazescan (clamav - maldet - blazescan)"
-#   git:
-#     repo: 'https://github.com/Hestat/blazescan.git'
-#     dest: /tmp/mokapot/blazescan
-#     clone: yes
-#     update: no
+- name: "Create /tmp/mokapot basedirectory if it does not exist"
+  file:
+    path: /tmp/mokapot
+    state: directory
+    mode: '0755'
+
+# https://www.sans.org/free tools
+- name: "git checkout quantumduck"
+  git:
+    repo: 'https://github.com/dagonis/QuantumDuck.git'
+    dest: /tmp/mokapot/quantumduck
+    clone: yes
+    update: no
+
+- name: "git checkout obscureV4"
+  git:
+    repo: 'https://github.com/dagonis/obscureV4.git'
+    dest: /tmp/mokapot/obscureV4
+    clone: yes
+    update: no
+
+- name: "git checkout pktIntel"
+  git:
+    repo: 'https://github.com/SecurityNik/pktIntel.git'
+    dest: /tmp/mokapot/pktIntel
+    clone: yes
+    update: no
+
+- name: "git checkout blazescan (clamav - maldet - blazescan)"
+  git:
+    repo: 'https://github.com/Hestat/blazescan.git'
+    dest: /tmp/mokapot/blazescan
+    clone: yes
+    update: no
 # - name: "Install (clamav - maldet - blazescan)"
 #   #shell: install.sh chdir=/tmp/mokapot/blazescan >> /tmp/blazescan_make.out
 #   #shell: install.sh >> /tmp/blazescan_make.out

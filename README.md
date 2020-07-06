@@ -88,6 +88,11 @@ system_packages:
   - mtr
   - tcpdump
   - net-tools
+
+SANS tools
+quantumduck https://github.com/dagonis/QuantumDuck.git
+obscureV4 https://github.com/dagonis/obscureV4.git
+pktIntel https://github.com/SecurityNik/pktIntel.git  
 ~~~~
 archlinux branch
 ~~~~
