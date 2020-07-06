@@ -18,7 +18,12 @@
     use: '{{ ansible_pkg_mgr }}'
     state: present
 
-
+- name: "Create /tmp/mokapot basedirectory if it does not exist"
+  file:
+    path: /tmp/mokapot
+    state: directory
+    mode: '0755'
+    
 - name: "Extract the latest version of maldet into /tmp"
   unarchive:
     src: https://www.rfxn.com/downloads/maldetect-current.tar.gz
