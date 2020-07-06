@@ -94,10 +94,9 @@ archlinux branch
 hcxdumptool https://github.com/ZerBea/hcxdumptool
 hcxtools https://github.com/ZerBea/hcxtools
 ~~~~
-blackarchlinux branch
+blackarchlinux branch (building on top of archlinux)
 ~~~~
-hcxdumptool https://github.com/ZerBea/hcxdumptool
-hcxtools https://github.com/ZerBea/hcxtools
+https://blackarch.org/tools.html
 ~~~~
 ~~~~
 parrot https://www.parrotsec.org/

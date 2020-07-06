@@ -22,11 +22,29 @@
 - name: "Extract the latest version of maldet into /tmp"
   unarchive:
     src: https://www.rfxn.com/downloads/maldetect-current.tar.gz
-    dest: /tmp
+    dest: /tmp/mokapot
     remote_src: yes
 
-- name: "move to the Maldet directory"
-  shell: ls -lai && cd /tmp/maldetect*
+- name: "move to the Maldet directory and install maldet"
+  shell: "cd /tmp/mokapot/maldetect* && sudo bash install.sh && sudo ln -s /usr/local/maldetect/maldet /usr/local/bin/maldet"
 
-- name: "Install maldet"
-  shell: install.sh
+
+# https://www.sans.org/free tools
+- name: "git checkout quantumduck"
+  git:
+    repo: 'https://github.com/dagonis/QuantumDuck.git'
+    dest: /tmp/mokapot/quantumduck
+    clone: yes
+    update: no
+- name: "git checkout obscureV4"
+  git:
+    repo: 'https://github.com/dagonis/obscureV4.git'
+    dest: /tmp/mokapot/obscureV4
+    clone: yes
+    update: no
+- name: "git checkout pktIntel"
+  git:
+    repo: 'https://github.com/SecurityNik/pktIntel.git'
+    dest: /tmp/mokapot/pktIntel
+    clone: yes
+    update: no
