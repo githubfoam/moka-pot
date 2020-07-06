@@ -52,12 +52,14 @@
     clone: yes
     update: no
 
-- name: "git checkout blazescan (clamav - maldet - blazescan)"
-  git:
-    repo: 'https://github.com/Hestat/blazescan.git'
-    dest: /tmp/mokapot/blazescan
-    clone: yes
-    update: no
+#####################testing##########################
+# - name: "git checkout blazescan (clamav - maldet - blazescan)"
+#   git:
+#     repo: 'https://github.com/Hestat/blazescan.git'
+#     dest: /tmp/mokapot/blazescan
+#     clone: yes
+#     update: no
+
 # - name: "Install (clamav - maldet - blazescan)"
 #   #shell: install.sh chdir=/tmp/mokapot/blazescan >> /tmp/blazescan_make.out
 #   #shell: install.sh >> /tmp/blazescan_make.out
@@ -66,7 +68,7 @@
 #     chdir: /tmp/mokapot/blazescan
 #     creates: blazescan_make.out
 
-# - name: "git checkout maldet (clamav - maldet - blazescan)"
+# - name: "git checkout lw-yara (clamav - maldet - blazescan)"
 #   git:
 #     repo: 'https://github.com/Hestat/lw-yara.git'
 #     dest: /tmp/mokapot/blazescan

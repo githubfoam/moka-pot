@@ -5,18 +5,15 @@ Travis (.com) dev branch:
 
 debian buster64 (master branch)
 ~~~~
-Linux Malware Detect (LMD) https://www.rfxn.com/projects/linux-malware-detect/
-yara rules https://github.com/Hestat/lw-yara
-blazescan https://github.com/Hestat/blazescan
-
 
 - chromium
-- burpsuite
-- ghidra
 - impacket https://github.com/SecureAuthCorp/impacket
 - nullinux https://github.com/m8r0wn/nullinux
 - nipper https://github.com/arpitn30/nipper-ng
+- burpsuite
 - docker
+- ghidra
+- maldet Linux Malware Detect (LMD) https://www.rfxn.com/projects/linux-malware-detect/
 
 mokapot_debian_reqs:
   - wapiti #web application vulnerability scanner
@@ -80,6 +77,7 @@ mokapot_debian_reqs:
   - autopsy #- graphical interface to SleuthKit
   - mac-robber #- collects data about allocated files in mounted filesystems
   - clamav #- anti-virus utility for Unix - command-line interface clamav https://www.clamav.net/downloads
+
 
 common
 system_packages:
