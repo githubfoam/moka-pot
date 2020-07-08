@@ -100,7 +100,7 @@ vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
 vagrant status
 virsh list --all #show all running KVM/libvirt VMs
-vagrant destroy "vg-mokapot-05"
+vagrant destroy -f "vg-mokapot-05"
 echo "================= debian-10.4 ends========================================================================"
 echo "========================================================================================="
 echo "================= archlinux begins========================================================================"
@@ -112,5 +112,5 @@ vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
 vagrant status
 virsh list --all #show all running KVM/libvirt VMs
-vagrant destroy "vg-mokapot-06"
+vagrant destroy -f "vg-mokapot-06"
 echo "================= archlinux ends========================================================================"
