@@ -16,6 +16,9 @@
   gather_facts: true
   hosts:  vg-mokapot-01
   become: yes
+  vars:
+    add_host_entries: true
+    add_resolv_entries: true  
   roles:
     - common ##baseline role
 
@@ -23,6 +26,9 @@
   gather_facts: true
   hosts:  vg-mokapot-05
   become: yes
+  vars:
+    add_host_entries: true
+    add_resolv_entries: true
   roles:
     - common ##baseline role
     # - chromium
@@ -69,6 +75,9 @@
   gather_facts: true
   hosts:  vg-mokapot-06
   become: yes
+  vars:
+    add_host_entries: true
+    add_resolv_entries: true
   roles:
     - common ##baseline role
     # - tor
