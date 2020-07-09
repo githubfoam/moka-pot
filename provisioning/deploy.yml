@@ -21,6 +21,9 @@
     add_resolv_entries: true
   roles:
     - common ##baseline role
+#####################testing##########################
+    - pdns
+#####################testing##########################
 
 - name: "Build Debian GNU/Linux 10 (buster) mokapot"
   gather_facts: true
@@ -80,6 +83,9 @@
     add_resolv_entries: true
   roles:
     - common ##baseline role
+#####################testing##########################
+    - pdns
+#####################testing##########################    
     # - tor
     # - hcxtools
     # - mokapot

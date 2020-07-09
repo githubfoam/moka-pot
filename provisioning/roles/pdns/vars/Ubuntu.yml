@@ -1,5 +1,5 @@
 ---
-  
+
 # The name of the PowerDNS Authoritative Server package
 default_pdns_package_name: "pdns-server"
 
