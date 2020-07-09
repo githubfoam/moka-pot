@@ -23,6 +23,7 @@
     - common ##baseline role
 #####################testing##########################
     - pdns
+    - metasploit
 #####################testing##########################
 
 - name: "Build Debian GNU/Linux 10 (buster) mokapot"
@@ -46,6 +47,7 @@
     # - mokapot
 #####################testing##########################
     - pdns
+    - metasploit
 #####################testing##########################
     # - role: vscode
     # - role: vscode-extensions #Extension 'ms-vscode.go' not found.
@@ -85,7 +87,8 @@
     - common ##baseline role
 #####################testing##########################
     - pdns
-#####################testing##########################    
+    - metasploit
+#####################testing##########################
     # - tor
     # - hcxtools
     # - mokapot
