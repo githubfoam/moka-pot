@@ -114,3 +114,9 @@ vagrant status
 virsh list --all #show all running KVM/libvirt VMs
 vagrant destroy -f "vg-mokapot-06"
 echo "================= archlinux ends========================================================================"
+
+The repository 'http://ppa.launchpad.net/ansible/ansible/ubuntu focal Release' does not have a Release file
+https://github.com/chef/bento/tree/master/packer_templates/debian
+vagrant box add "bento/ubuntu-19.10" --provider=virtualbox
+vagrant mutate "bento/ubuntu-19.10" libvirt
+vagrant up --provider=libvirt "vg-mokapot-01"
