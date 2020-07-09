@@ -62,7 +62,7 @@
       - mpv
       - pcmanfm
       - viewnior
-  # become: true
+      - git
 
 - name: Install python development tools
   pacman:
