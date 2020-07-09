@@ -156,6 +156,8 @@ parrot https://www.parrotsec.org/
 freebsd https://www.freebsd.org/
 openbsd https://www.openbsd.org/
 netbsd https://www.netbsd.org/
+buscador https://inteltechniques.com/buscador/
+security onion https://securityonion.readthedocs.io/en/latest/
 ~~~~
 
 ~~~~

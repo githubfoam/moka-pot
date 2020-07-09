@@ -18,7 +18,7 @@
   become: yes
   vars:
     add_host_entries: true
-    add_resolv_entries: true  
+    add_resolv_entries: true
   roles:
     - common ##baseline role
 
@@ -83,4 +83,4 @@
     # - tor
     # - hcxtools
     # - mokapot
-    - nipper
+    # - nipper
