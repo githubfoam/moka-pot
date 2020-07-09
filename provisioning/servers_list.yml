@@ -1,6 +1,6 @@
 ---
 - vagrant_box_host: "vg-mokapot-01"
-  vagrant_box: "bento/ubuntu-19.10"
+  vagrant_box: "bento/ubuntu-20.04"
   vbox_name: "vbox-mokapot-01"
   vbox_ram: 4096
   vbox_cpu: 2

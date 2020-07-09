@@ -92,11 +92,10 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 echo "================= ubuntu-19.10 begins========================================================================"
 # The repository 'http://ppa.launchpad.net/ansible/ansible/ubuntu focal Release' does not have a Release file
 # https://github.com/chef/bento/tree/master/packer_templates/debian
-vagrant box add "bento/ubuntu-19.10" --provider=virtualbox
-vagrant mutate "bento/ubuntu-19.10" libvirt
+vagrant box add "bento/ubuntu-20.04" --provider=virtualbox
+vagrant mutate "bento/ubuntu-20.04" libvirt
 vagrant up --provider=libvirt "vg-mokapot-01"
 
-echo "================= ubuntu-19.10 ends========================================================================"
 echo "========================================================================================="
 echo "================= ubuntu-19.10 begins========================================================================"
 #https://github.com/chef/bento/tree/master/packer_templates/debian
@@ -108,8 +107,8 @@ vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
 vagrant status
 virsh list --all #show all running KVM/libvirt VMs
-vagrant destroy -f "vg-mokapot-05"
-echo "================= debian-10.4 ends========================================================================"
+# vagrant destroy -f "vg-mokapot-05"
+
 echo "========================================================================================="
 echo "================= archlinux begins========================================================================"
 # https://app.vagrantup.com/archlinux
@@ -120,5 +119,5 @@ vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
 vagrant status
 virsh list --all #show all running KVM/libvirt VMs
-vagrant destroy -f "vg-mokapot-06"
-echo "================= archlinux ends========================================================================"
+# vagrant destroy -f "vg-mokapot-06"
+echo "========================================================================================="
