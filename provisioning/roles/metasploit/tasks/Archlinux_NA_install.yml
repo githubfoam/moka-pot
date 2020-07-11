@@ -16,8 +16,7 @@
 - include_tasks: pacman.yml
 
 - name: "Install required packages"
-  package: pkg={{ item }} state=installed update_cache=yes
-  become: yes
+  package: pkg={{ item }} state=present update_cache=yes
   with_items:
   - bridge-utils
   - libreadline-dev
