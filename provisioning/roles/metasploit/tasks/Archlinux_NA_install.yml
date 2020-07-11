@@ -20,7 +20,7 @@
   with_items:
   - bridge-utils
   - libreadline-dev
-  - libpcap-ruby
+  # - libpcap-ruby "No package matching 'libpcap-ruby' is available"}
   - libpq5
   - libpq-dev
   - libsqlite3-dev
@@ -32,7 +32,7 @@
   - libpcap-ruby
   - libncap44
   - nmap
-  - openjdk-7-jre
+  # - openjdk-7-jre "No package matching 'openjdk-7-jre' is available"}
   - pgadmin3
   - postgresql
   - tcpdump
