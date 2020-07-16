@@ -18,6 +18,11 @@
     use: '{{ ansible_pkg_mgr }}'
     state: present
 
+- name: "Install Kali Repos"
+  apt_repository:
+    repo: "deb http://http.kali.org/kali kali-rolling main contrib non-free"
+    state: present
+    filename: kali.list
 # - name: "Install system packages"
 #   package:
 #     name: '{{ system_packages }}'
