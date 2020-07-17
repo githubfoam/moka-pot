@@ -49,3 +49,70 @@ kali_os_packages:
   - wireguard
   - xclip
   - xsel
+
+kali_tool_packages:
+  - aircrack-ng
+  - amass
+  - apache2
+  - bloodhound
+  - cadaver
+  - cewl
+  - chromium
+  - crackmapexec
+  - creddump7
+  - dirb
+  - dnsrecon
+  - exe2hexbat
+  - exploitdb
+  - eyewitness
+  - freerdp2-x11
+  - gdb
+  - gdbserver
+  - gobuster
+  - gpp-decrypt
+  - hash-identifier
+  - hydra
+  - john
+  - joplin
+  - masscan
+  - metasploit-framework
+  - nasm
+  - nbtscan-unixwiz
+  - ncat
+  - neo4j
+  - netcat-traditional
+  - netdiscover
+  - nikto
+  - nmap
+  - onesixtyone
+  - parallel
+  - passing-the-hash
+  - patator
+  - powershell
+  - proxychains4
+  - python3-impacket
+  - responder
+  - rlwrap
+  - smbclient
+  - smbmap
+  - socat
+  - sqlmap
+  - sslscan
+  - sslyze
+  - wafw00f
+  - webshells
+  - weevely
+  - wfuzz
+  - whatweb
+  - wifiphisher
+  - windows-binaries
+  - wireshark
+  - wpscan
+  - xtightvncviewer
+
+python_pip_packages:
+  - bloodhound
+  - mitm6
+
+ruby_gem_packages:
+  - evil-winrm  

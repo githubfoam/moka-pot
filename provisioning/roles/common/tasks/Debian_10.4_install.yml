@@ -46,12 +46,39 @@
     update_cache: true
     upgrade: safe  
 
+- name: "Enable Wireshark setuid debconf selection"
+  debconf:
+    name: wireshark
+    question: wireshark-common/install-setuid
+    value: 'true'
+    vtype: boolean 
+
 - name: "Install kali os packages"
   apt:
     name: "{{ kali_os_packages }}"
     state: present
-# - name: "Install system packages"
-#   package:
-#     name: '{{ system_packages }}'
-#     use: '{{ ansible_pkg_mgr }}'
-#     state: present
+
+- name: "Install kali tool packages"
+  apt:
+    name: "{{ kali_tool_packages }}"
+    state: present
+  environment:
+    RUNLEVEL: 1
+
+- name: "Remove unnecessary packages  clean apt cache"
+  apt:
+    autoremove: true
+    autoclean: true
+
+- name: "Install Python Pip Packages"
+  pip:
+    name: "{{ item }}"
+    state: latest
+    executable: pip3
+  loop: "{{ python_pip_packages }}"
+
+- name: "Install Ruby gems"
+  gem:
+    name: "{{ item }}"
+    state: latest
+    loop: "{{ ruby_gem_packages }}"
