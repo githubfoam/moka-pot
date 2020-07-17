@@ -18,6 +18,11 @@
     use: '{{ ansible_pkg_mgr }}'
     state: present
 
+- name: "Add an apt key by id from a keyserver"
+  apt_key:
+    keyserver: hkp://keys.gnupg.net
+    id: 041886AC81B32F8A9363C9D413242C996AE977A3
+    
 - name: "Add an Apt signing key, uses whichever key is at the URL"
   apt_key:
     url: https://archive.kali.org/archive-key.asc
