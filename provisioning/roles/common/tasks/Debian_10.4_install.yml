@@ -74,7 +74,8 @@
   pip:
     name: "{{ item }}"
     state: latest
-    executable: pip3
+    # executable: pip3
+    executable: /usr/local/bin/pip
   loop: "{{ python_pip_packages }}"
 
 - name: "Install Ruby gems"
