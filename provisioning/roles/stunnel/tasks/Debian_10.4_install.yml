@@ -1,0 +1,72 @@
+---
+#https://docs.ansible.com/ansible/2.3/include_vars_module.html
+- name: "Load a variable file based on the OS type, or a default if not found"
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_os_family }}.yml"
+    - "{{ ansible_distribution }}_{{ ansible_distribution_version }}.yml"
+    - default.yml
+
+
+- name: "Install system packages"
+  package:
+    name: '{{ system_packages }}'
+    use: '{{ ansible_pkg_mgr }}'
+    state: present
+    
+- name: "download"
+  get_url:
+    url: '{{ stunnel_tgz_url }}'
+    dest: /tmp/{{ stunnel_tgz }}
+    checksum: '{{ stunnel_checksum }}'
+    mode: 0644
+
+- name: unarchive
+  unarchive:
+    remote_src: yes
+    src: /tmp/{{ stunnel_tgz }}
+    dest: '{{ stunnel_parent_src_dir }}'
+    creates: '{{ stunnel_src_dir }}'
+
+- name: configure
+  command: ./configure --prefix={{ stunnel_install_prefix }}
+  args:
+    chdir: '{{ stunnel_src_dir }}'
+    creates: '{{ stunnel_src_dir }}/Makefile'
+
+- name: make
+  command: make
+  args:
+    chdir: '{{ stunnel_src_dir }}'
+    creates: '{{ stunnel_src_dir }}/src/stunnel'
+
+- name: make install
+  command: make install
+  args:
+    chdir: '{{ stunnel_src_dir }}'
+    creates: /usr/local/bin/stunnel
+
+- name: "make config directory"
+  with_items:
+    - '{{ stunnel_conf_dir }}'
+    - '{{ stunnel_profile_dir }}'
+  file:
+    path: '{{ item }}'
+    state: directory
+    mode: 0755
+
+- name: "Install the stunnel entry point"
+  with_items:
+    - f: boot-stunnel.sh
+      d: '{{ stunnel_install_bin_dir }}'
+      m: '0755'
+  template:
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m }}'
+
+- name: cleanup
+  when: stunnel_cleanup
+  file:
+    path: '{{ stunnel_src_dir }}'
+    state: absent

@@ -35,6 +35,8 @@
     - maldet
     - mokapot
 #####################testing##########################
+    # - pdns
+    # - stunnel
     # - role: vscode
     # - role: vscode-extensions #Extension 'ms-vscode.go' not found.
     #   vscode_extensions:
