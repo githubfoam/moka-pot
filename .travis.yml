@@ -8,19 +8,46 @@ matrix:
   fast_finish: true
   include:
 
-    - name: "build Vagrant and Libvirt with KVM or QEMU - bionic"
+    # - name: "build Vagrant and Libvirt with KVM or QEMU - bionic"
+    #   dist: bionic
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #       - sudo make deploy-libvirt
+    #       - sudo make deploy-vagrant
+    #       - sudo make deploy-boxes
+    #       # - travis_wait 20 waitfortrav.sh
+    #   after_success:
+    #     - deactivate
+
+# https://mobsf.github.io/docs/#/installation?id=linuxmac
+# https://mobsf.github.io/docs/#/requirements
+# https://github.com/MobSF/Mobile-Security-Framework-MobSF
+    - name: "build Mobile Security Framework (MobSF) - bionic"
       dist: bionic
-      language: python
-      python: 3.7
+      # language: python
+      # python: 3.7
       before_install:
-        - pip3 install virtualenv
-        - virtualenv -p $(which python3) ~venvpy3
-        - source ~venvpy3/bin/activate
-        - pip install -r requirements.txt
+        # - pip3 install virtualenv
+        # - virtualenv -p $(which python3) ~venvpy3
+        # - source ~venvpy3/bin/activate
+        # - pip install -r requirements.txt
+        - sudo apt-get install -qqy git python3.7 openjdk-8-jdk
       script:
-          - sudo make deploy-libvirt
-          - sudo make deploy-vagrant
-          - sudo make deploy-boxes
+        - | 
+          sudo apt-get install -qqy \
+          python3-dev python3-venv python3-pip \ 
+          build-essential libffi-dev libssl-dev \
+          libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev wkhtmltopdf
+        - java -version 
+          # - sudo make deploy-libvirt
+          # - sudo make deploy-vagrant
+          # - sudo make deploy-boxes
           # - travis_wait 20 waitfortrav.sh
       after_success:
         - deactivate
